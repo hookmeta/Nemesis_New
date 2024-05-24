@@ -24,7 +24,7 @@ getgenv().Script = {
     ["SAFETY_AntiClientCurve"] = false,
     --------------------------------------------------------------------------------------------------------------------------------------------------------------------------
     ["UNIVERSAL_Enabled"] = false,
-    ["UNIVERSAL_AimBone"] = "Head",
+    ["UNIVERSAL_AimBone"] = "Head", -- [[ Head, Torso, Stomach ]]
     ["UNIVERSAL_TeamCheck"] = true,
     ["UNIVERSAL_Box"] = { ["Enabled"] = true, ["Size"] = { ["X"] = 3, ["Y"] = 4 }, ["Color"] = Color3.fromRGB(220, 198, 198) },
     ["UNIVERSAL_Chams"] = { ["Enabled"] = true, ["Color"] = Color3.fromRGB(181, 209, 228), ["Outline"] = Color3.fromRGB(0, 0, 0), ["Transparency"] = 0.1 },
