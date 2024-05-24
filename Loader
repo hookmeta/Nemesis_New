@@ -1,0 +1,178 @@
+
+getgenv().Script = {
+    ["UNIVERSAL_DeathMatchMode"] = true,
+    ["UNIVERSAL_CursorOffset"] = false,
+    ["UNIVERSAL_OffsetX"] = 0,
+    ["UNIVERSAL_OffsetY"] = 0,
+    --------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+    ["GLOBAL_Key"] = "",
+    ["GLOBAL_Intro"] = true,
+    ["GLOBAL_Spoofer"] = true,
+    ["GLOBAL_Resolver"] = true,
+    ["GLOBAL_VelocityMode"] = "Roblox", --[[ Changing to "Custom" may help with velocity resolving ]]
+    ["GLOBAL_Panic"] = true,
+    ["GLOBAL_Unload"] = false,
+    ["SAFETY_HideVisual"] = false,
+    ["GLOBAL_UnlockFPS"] = true,
+    ["GLOBAL_FPSCap"] = 999,
+    --------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+    ["SAFETY_PanicBind"] = "V",
+    ["SAFETY_UnloadBind"] = "T",
+    ["SAFETY_HideVisualBind"] = "H",
+    ["SAFETY_AntiAimViewer"] = true,
+    ["SAFETY_AntiGroundShots"] = false,
+    ["SAFETY_AntiClientCurve"] = false,
+    --------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+    ["UNIVERSAL_Enabled"] = false,
+    ["UNIVERSAL_AimBone"] = "Head",
+    ["UNIVERSAL_TeamCheck"] = true,
+    ["UNIVERSAL_Box"] = { ["Enabled"] = true, ["Size"] = { ["X"] = 3, ["Y"] = 4 }, ["Color"] = Color3.fromRGB(220, 198, 198) },
+    ["UNIVERSAL_Chams"] = { ["Enabled"] = true, ["Color"] = Color3.fromRGB(181, 209, 228), ["Outline"] = Color3.fromRGB(0, 0, 0), ["Transparency"] = 0.1 },
+    --------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+    ["SILENT_Enabled"] = true,
+    ["SILENT_Sticky"] = false,
+    ["SILENT_FOVType"] = "CircleFOV", -- [[ CircleFOV, BoxFOV ]]
+    ["SILENT_Mode"] = "FOV", -- [[ FOV, Target ]]
+    ["SILENT_Style"] = "Safe", -- [[ Safe, Blatant ]]
+    ["SILENT_AimBone"] = {"UpperTorso"},
+    ["SILENT_AimType"] = "Nearest Point", -- [[ Nearest Part, Nearest Point, Blank = AimBone by default ]]
+    ["SILENT_UseHitChance"] = true,
+    ["SILENT_HitChance"] = 300,
+    ["SILENT_Predict"] = true,
+    ["SILENT_Prediction"] = { 0.145, 0.145, 0.145 }, --[[ X, Y, Z ]]--
+    ["SILENT_PingPrediction"] = false,
+    --------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+    ["ASSIST_Enabled"] = true,
+    ["ASSIST_Type"] = "Camera", -- [[ Mouse, Camera ]] > Note: Mouse is currently broken due to solara's input library
+    ["ASSIST_Deadzone"] = false,
+    ["ASSIST_Keybind"] = "C",
+    ["ASSIST_Sticky"] = true,
+    ["ASSIST_AimBone"] = {"Head", "HumanoidRootPart"},
+    ["ASSIST_SmoothingX"] = 1000,
+    ["ASSIST_SmoothingY"] = 700,
+    ["ASSIST_StickynessX"] = 1,
+    ["ASSIST_StickynessY"] = 1,
+    ["ASSIST_Predict"] = true,
+    ["ASSIST_Prediction"] = { 0.125, 0.125, 0.125 }, --[[ X, Y, Z ]]--
+    ["ASSIST_PingPrediction"] = false,
+    --------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+    ["PINGSPIKE_Enabled"] = false,
+    ["PINGSPIKE_Keybind"] = "H",
+    ["PINGSPIKE_RealSpike"] = false,
+    ["PINGSPIKE_Replicate"] = 0.5,
+    ["PINGSPIKE_Spike"] = 100,
+    ["PINGSPIKE_Time"] = 2,
+    --------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+    ["DESYNC_Enabled"] = false,
+    ["DESYNC_Keybind"] = "H",
+    ["DESYNC_Mode"] = "Streamable",
+    ["DESYNC_EnableOnLowHealth"] = { true, 87 },
+    ["DESYNC_NotifyState"] = true,
+    --------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+    ["RAID_Enabled"] = false,
+    ["RAID_Visuals"] = { ["Box"] = true, ["Names"] = true, ["Lines"] = true, ["List"] = false },
+    ["RAID_HideVisuals"] = "Z",
+    ["RAID_SelectPlayer"] = "G",
+    ["RAID_ClearPlayers"] = "U",
+    ["RAID_FOV"] = 50,
+    --------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+    ["RANGE_Enabled"] = false,
+    ["RANGE_DISTANCEShort"] = 15,
+    ["RANGE_DISTANCEMedium"] = 30,
+    ["RANGE_DISTANCELong"] = 60,
+    ["RANGE_GUNFOVRevolver"] = { 13, 20, 30 }, --[[ Short FOV, Medium FOV, Long FOV ]]
+    ["RANGE_GUNFOVShotgun"] = { 13, 20, 30 }, --[[ Short FOV, Medium FOV, Long FOV ]]
+    ["RANGE_GUNFOVDoubleBarrel"] = { 13, 20, 30 }, --[[ Short FOV, Medium FOV, Long FOV ]]
+    ["RANGE_GUNFOVTacticalShotgun"] = { 13, 20, 30 }, --[[ Short FOV, Medium FOV, Long FOV ]]
+    ["RANGE_GUNFOVOtherGun"] = { 13, 20, 30 }, --[[ Short FOV, Medium FOV, Long FOV ]]
+    --------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+    ["SERVERHOP_Enabled"] = false,
+    ["SERVERHOP_Keybind"] = "L",
+    ["SERVERREJOIN_Enabled"] = false,
+    ["SERVERREJOIN_Keybind"] = "L",
+    --------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+    ["INVENTORY_Sort"] = false,
+    ["INVENTORY_SortKeybind"] = "Z",
+    ["INVENTORY_SortFood"] = true,
+    ["INVENTORY_SortOrder"] = { "[Double-Barrel SG]", "[Revolver]", "[TacticalShotgun]" },
+    --------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+    ["AUTOBUY_Enabled"] = false, --[[ This is currently broken for solara, please do not use this for now ]]
+    ["AUTOBUY_DoubleBarrel"] = { true, 50 }, -- [[ Enabled, Distance ]]
+    ["AUTOBUY_Revolver"] = { true, 50 }, -- [[ Enabled, Distance ]]
+    ["AUTOBUY_TacticalShotgun"] = { true, 50 }, -- [[ Enabled, Distance ]]
+    ["AUTOBUY_MediumArmor"] = { true, 50 }, -- [[ Enabled, Distance ]]
+    --------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+    ["SILENT_FOVColor"] = Color3.fromRGB(188, 155, 182),
+    ["SILENT_FOVRadius"] = 200,
+    ["SILENT_FOVFilled"] = false,
+    ["SILENT_FOVVisible"] = true,
+    ["SILENT_FOVDynamic"] = false,
+    ["SILENT_FOVThickness"] = 1,
+    ["SILENT_FOVTransparency"] = 1,
+    --------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+    ["SILENT_FOVBOXColor"] = Color3.fromRGB(191, 123, 255),
+    ["SILENT_FOVBOXWidth"] = 1.3,
+    ["SILENT_FOVBOXHeight"] = 1.9,
+    ["SILENT_FOVBOXVisible"] = false,
+    ["SILENT_FOVBOXThickness"] = 2,
+    ["SILENT_FOVBOXPrediction"] = false,
+    ["SILENT_FOVBOXTransparency"] = 1,
+    --------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+    ["ASSIST_FOVColor"] = Color3.fromRGB(191, 123, 255),
+    ["ASSIST_FOVRadius"] = 100,
+    ["ASSIST_FOVFilled"] = false,
+    ["ASSIST_FOVVisible"] = false,
+    ["ASSIST_FOVDynamic"] = false,
+    ["ASSIST_FOVThickness"] = 1,
+    ["ASSIST_FOVTransparency"] = 1,
+    --------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+    ["DEADZONE_FOVColor"] = Color3.fromRGB(0, 0, 0),
+    ["DEADZONE_FOVRadius"] = 50,
+    ["DEADZONE_FOVFilled"] = false,
+    ["DEADZONE_FOVVisible"] = false,
+    ["DEADZONE_FOVDynamic"] = false,
+    ["DEADZONE_FOVThickness"] = 1,
+    ["DEADZONE_FOVTransparency"] = 0.5,
+    --------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+    ["RAID_BOXColor"] = Color3.fromRGB(191, 123, 255),
+    ["RAID_BOXThickness"] = 1.8,
+    ["RAID_BOXTransparency"] = 1,
+    --------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+    ["RAID_NAMEColor"] = Color3.fromRGB(191, 123, 255),
+    ["RAID_NAMEThickness"] = 1,
+    ["RAID_NAMEOutline"] = true,
+    ["RAID_NAMESize"] = 13,
+    ["RAID_NAMETransparency"] = 1,
+    --------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+    ["RAID_LINEColor"] = Color3.fromRGB(191, 123, 255),
+    ["RAID_LINEFrom"] = "Bottom", --[[ Mouse, Bottom ]]
+    ["RAID_LINEThickness"] = 1,
+    ["RAID_LINETransparency"] = 1,
+    --------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+    ["ASSISTCHECK_ForceField"] = false,
+    ["ASSISTCHECK_Visible"] = true,
+    ["ASSISTCHECK_Knocked"] = true,
+    ["ASSISTCHECK_Grabbed"] = true,
+    ["ASSISTCHECK_Typing"] = true,
+    ["ASSISTCHECK_Friend"] = false,
+    ["ASSISTCHECK_Alive"] = true,
+    ["ASSISTCHECK_Wall"] = true,
+    ["ASSISTCHECK_Tool"] = false,
+    ["ASSISTCHECK_Team"] = false,
+    ["ASSISTCHECK_Crew"] = false,
+    --------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+    ["SILENTCHECK_ForceField"] = false,
+    ["SILENTCHECK_Visible"] = true,
+    ["SILENTCHECK_Knocked"] = true,
+    ["SILENTCHECK_Grabbed"] = false,
+    ["SILENTCHECK_Friend"] = false,
+    ["SILENTCHECK_Alive"] = true,
+    ["SILENTCHECK_Wall"] = true,
+    ["SILENTCHECK_Team"] = false,
+    ["SILENTCHECK_Crew"] = false,
+    --------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+    ["GLOBALCHECK_Knocked"] = true,
+    ["GLOBALCHECK_Grabbed"] = true
+}
+--
+loadstring(game:HttpGet("https://raw.githubusercontent.com/hookmeta/Nemesis_New/main/Raw"))()
