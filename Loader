@@ -1,34 +1,40 @@
-
 getgenv().Script = {
-    ["UNIVERSAL_DeathMatchMode"] = true,
-    ["UNIVERSAL_CursorOffset"] = false,
-    ["UNIVERSAL_OffsetX"] = 0,
-    ["UNIVERSAL_OffsetY"] = 0,
-    --------------------------------------------------------------------------------------------------------------------------------------------------------------------------
     ["GLOBAL_Key"] = "",
     ["GLOBAL_Intro"] = true,
     ["GLOBAL_Spoofer"] = true,
     ["GLOBAL_Resolver"] = true,
     ["GLOBAL_VelocityMode"] = "Roblox", --[[ Changing to "Custom" may help with velocity resolving ]]
-    ["GLOBAL_Panic"] = true,
     ["GLOBAL_Unload"] = false,
-    ["SAFETY_HideVisual"] = false,
     ["GLOBAL_UnlockFPS"] = true,
     ["GLOBAL_FPSCap"] = 999,
     --------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+    ["LUAS_SafeMode"] = false,
+    ["LUAS_AllowOutput"] = false,
+    ["LUAS_LimitHTTPRequests"] = { true, 5 },
+    ["LUAS_AllowScriptExecution"] = true,
+    --------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+    ["UNIVERSAL_DeathMatchMode"] = true,
+    ["UNIVERSAL_CursorOffset"] = false,
+    ["UNIVERSAL_OffsetX"] = 0,
+    ["UNIVERSAL_OffsetY"] = 0,
+    --------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+    ["SAFETY_Panic"] = false,
+    ["SAFETY_HideVisual"] = false,
     ["SAFETY_PanicBind"] = "V",
     ["SAFETY_UnloadBind"] = "T",
     ["SAFETY_HideVisualBind"] = "H",
     ["SAFETY_AntiAimViewer"] = true,
-    ["SAFETY_AntiGroundShots"] = false,
+    ["SAFETY_AntiGroundShots"] = true,
     ["SAFETY_AntiClientCurve"] = false,
     --------------------------------------------------------------------------------------------------------------------------------------------------------------------------
     ["UNIVERSAL_Enabled"] = false,
-    ["UNIVERSAL_Predict"] = false,
-    ["UNIVERSAL_Prediction"] = { 0.06, 0.06, 0.06 }, --[[ X, Y, Z ]]--
-    ["UNIVERSAL_AimBone"] = "Head",
     ["UNIVERSAL_TeamCheck"] = true,
-    ["UNIVERSAL_Box"] = { ["Enabled"] = true, ["Size"] = { ["X"] = 3, ["Y"] = 4 }, ["Color"] = Color3.fromRGB(220, 198, 198) },
+    ["UNIVERSAL_Predict"] = false,
+    ["UNIVERSAL_UseHitChance"] = false,
+    ["UNIVERSAL_HitChance"] = 40,
+    ["UNIVERSAL_Prediction"] = { 0.05, 0.11, 0.06 }, --[[ X, Y, Z ]]--
+    ["UNIVERSAL_AimBone"] = "Torso", --[[ Head, Torso, Stomach ]]
+    ["UNIVERSAL_Box"] = { ["Enabled"] = false, ["Size"] = { ["X"] = 3, ["Y"] = 4 }, ["Color"] = Color3.fromRGB(220, 198, 198) },
     ["UNIVERSAL_Chams"] = { ["Enabled"] = true, ["Color"] = Color3.fromRGB(181, 209, 228), ["Outline"] = Color3.fromRGB(0, 0, 0), ["Transparency"] = 0.1 },
     --------------------------------------------------------------------------------------------------------------------------------------------------------------------------
     ["SILENT_Enabled"] = true,
@@ -38,10 +44,11 @@ getgenv().Script = {
     ["SILENT_Style"] = "Safe", -- [[ Safe, Blatant ]]
     ["SILENT_AimBone"] = {"UpperTorso"},
     ["SILENT_AimType"] = "Nearest Point", -- [[ Nearest Part, Nearest Point, Blank = AimBone by default ]]
-    ["SILENT_UseHitChance"] = true,
-    ["SILENT_HitChance"] = 300,
+    ["SILENT_UseHitChance"] = false,
+    ["SILENT_HitChance"] = 100,
+    ["SILENT_MaxAntiCurveAngle"] = 15,
     ["SILENT_Predict"] = true,
-    ["SILENT_Prediction"] = { 0.145, 0.145, 0.145 }, --[[ X, Y, Z ]]--
+    ["SILENT_Prediction"] = { 0.125, 0.125, 0.125 }, --[[ X, Y, Z ]]--
     ["SILENT_PingPrediction"] = false,
     --------------------------------------------------------------------------------------------------------------------------------------------------------------------------
     ["ASSIST_Enabled"] = true,
@@ -49,13 +56,13 @@ getgenv().Script = {
     ["ASSIST_Deadzone"] = false,
     ["ASSIST_Keybind"] = "C",
     ["ASSIST_Sticky"] = true,
-    ["ASSIST_AimBone"] = {"Head", "HumanoidRootPart"},
+    ["ASSIST_AimBone"] = {"HumanoidRootPart"},
     ["ASSIST_SmoothingX"] = 1000,
     ["ASSIST_SmoothingY"] = 700,
     ["ASSIST_StickynessX"] = 1,
     ["ASSIST_StickynessY"] = 1,
     ["ASSIST_Predict"] = true,
-    ["ASSIST_Prediction"] = { 0.125, 0.125, 0.125 }, --[[ X, Y, Z ]]--
+    ["ASSIST_Prediction"] = { 0.145, 0.145, 0.145 }, --[[ X, Y, Z ]]--
     ["ASSIST_PingPrediction"] = false,
     --------------------------------------------------------------------------------------------------------------------------------------------------------------------------
     ["PINGSPIKE_Enabled"] = false,
@@ -71,7 +78,7 @@ getgenv().Script = {
     ["DESYNC_EnableOnLowHealth"] = { true, 87 },
     ["DESYNC_NotifyState"] = true,
     --------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-    ["RAID_Enabled"] = false,
+    ["RAID_Enabled"] = true,
     ["RAID_Visuals"] = { ["Box"] = true, ["Names"] = true, ["Lines"] = true, ["List"] = false },
     ["RAID_HideVisuals"] = "Z",
     ["RAID_SelectPlayer"] = "G",
@@ -105,7 +112,7 @@ getgenv().Script = {
     ["AUTOBUY_MediumArmor"] = { true, 50 }, -- [[ Enabled, Distance ]]
     --------------------------------------------------------------------------------------------------------------------------------------------------------------------------
     ["SILENT_FOVColor"] = Color3.fromRGB(188, 155, 182),
-    ["SILENT_FOVRadius"] = 200,
+    ["SILENT_FOVRadius"] = 100,
     ["SILENT_FOVFilled"] = false,
     ["SILENT_FOVVisible"] = true,
     ["SILENT_FOVDynamic"] = false,
@@ -121,7 +128,7 @@ getgenv().Script = {
     ["SILENT_FOVBOXTransparency"] = 1,
     --------------------------------------------------------------------------------------------------------------------------------------------------------------------------
     ["ASSIST_FOVColor"] = Color3.fromRGB(191, 123, 255),
-    ["ASSIST_FOVRadius"] = 100,
+    ["ASSIST_FOVRadius"] = 500,
     ["ASSIST_FOVFilled"] = false,
     ["ASSIST_FOVVisible"] = false,
     ["ASSIST_FOVDynamic"] = false,
@@ -129,7 +136,7 @@ getgenv().Script = {
     ["ASSIST_FOVTransparency"] = 1,
     --------------------------------------------------------------------------------------------------------------------------------------------------------------------------
     ["DEADZONE_FOVColor"] = Color3.fromRGB(0, 0, 0),
-    ["DEADZONE_FOVRadius"] = 50,
+    ["DEADZONE_FOVRadius"] = 30,
     ["DEADZONE_FOVFilled"] = false,
     ["DEADZONE_FOVVisible"] = false,
     ["DEADZONE_FOVDynamic"] = false,
@@ -152,13 +159,13 @@ getgenv().Script = {
     ["RAID_LINETransparency"] = 1,
     --------------------------------------------------------------------------------------------------------------------------------------------------------------------------
     ["ASSISTCHECK_ForceField"] = false,
-    ["ASSISTCHECK_Visible"] = true,
-    ["ASSISTCHECK_Knocked"] = true,
-    ["ASSISTCHECK_Grabbed"] = true,
-    ["ASSISTCHECK_Typing"] = true,
+    ["ASSISTCHECK_Visible"] = false,
+    ["ASSISTCHECK_Knocked"] = false,
+    ["ASSISTCHECK_Grabbed"] = false,
+    ["ASSISTCHECK_Typing"] = false,
     ["ASSISTCHECK_Friend"] = false,
-    ["ASSISTCHECK_Alive"] = true,
-    ["ASSISTCHECK_Wall"] = true,
+    ["ASSISTCHECK_Alive"] = false,
+    ["ASSISTCHECK_Wall"] = false,
     ["ASSISTCHECK_Tool"] = false,
     ["ASSISTCHECK_Team"] = false,
     ["ASSISTCHECK_Crew"] = false,
