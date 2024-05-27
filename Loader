@@ -39,9 +39,11 @@ getgenv().Script = {
     ["UNIVERSAL_Chams"] = { ["Enabled"] = true, ["Color"] = Color3.fromRGB(181, 209, 228), ["Outline"] = Color3.fromRGB(0, 0, 0), ["Transparency"] = 0.1 },
     --------------------------------------------------------------------------------------------------------------------------------------------------------------------------
     ["SILENT_Enabled"] = true,
-    ["SILENT_Sticky"] = true,
+    ["SILENT_Sticky"] = false,
     ["SILENT_FOVType"] = "CircleFOV", -- [[ CircleFOV, BoxFOV ]]
     ["SILENT_Mode"] = "FOV", -- [[ FOV, Target ]]
+    ["SILENT_TargetBind"] = "Z", -- > Note: Only works with target mode
+    ["SILENT_Synchronize"] = false, -- > Note: Only works with target mode
     ["SILENT_Style"] = "Safe", -- [[ Safe, Blatant ]]
     ["SILENT_AimBone"] = {"UpperTorso"},
     ["SILENT_AimType"] = "Nearest Point", -- [[ Nearest Part, Nearest Point, Blank = AimBone by default ]]
@@ -125,7 +127,7 @@ getgenv().Script = {
     ["SILENT_FOVBOXColor"] = Color3.fromRGB(191, 123, 255),
     ["SILENT_FOVBOXWidth"] = 1.3,
     ["SILENT_FOVBOXHeight"] = 1.9,
-    ["SILENT_FOVBOXVisible"] = false,
+    ["SILENT_FOVBOXVisible"] = true,
     ["SILENT_FOVBOXThickness"] = 2,
     ["SILENT_FOVBOXPrediction"] = false,
     ["SILENT_FOVBOXTransparency"] = 1,
