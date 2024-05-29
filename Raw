@@ -1,3 +1,4 @@
+script_key=getgenv().Script["GLOBAL_KEY"];
 ([[
                 This script has been licensed using Luarmor
                   Luarmor v3.8b, Lua whitelisting system
