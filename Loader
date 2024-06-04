@@ -130,12 +130,6 @@ getgenv().Script = {
     ["PINGSPIKE_Spike"] = 100,
     ["PINGSPIKE_Time"] = 2,
     --------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-    ["DESYNC_Enabled"] = false,
-    ["DESYNC_Keybind"] = "H",
-    ["DESYNC_Mode"] = "Streamable",
-    ["DESYNC_EnableOnLowHealth"] = { false, 100 },
-    ["DESYNC_NotifyState"] = true,
-    --------------------------------------------------------------------------------------------------------------------------------------------------------------------------
     ["RAID_Enabled"] = true,
     ["RAID_Visuals"] = { ["Box"] = true, ["Names"] = true, ["Lines"] = true, ["List"] = false },
     ["RAID_HideVisuals"] = "Z",
@@ -162,12 +156,6 @@ getgenv().Script = {
     ["INVENTORY_SortKeybind"] = "Z",
     ["INVENTORY_SortFood"] = true,
     ["INVENTORY_SortOrder"] = { "[Double-Barrel SG]", "[Revolver]", "[TacticalShotgun]" },
-    --------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-    ["AUTOBUY_Enabled"] = false, --[[ This is currently broken for solara, please do not use this for now ]]
-    ["AUTOBUY_DoubleBarrel"] = { true, 50 }, -- [[ Enabled, Distance ]]
-    ["AUTOBUY_Revolver"] = { true, 50 }, -- [[ Enabled, Distance ]]
-    ["AUTOBUY_TacticalShotgun"] = { true, 50 }, -- [[ Enabled, Distance ]]
-    ["AUTOBUY_MediumArmor"] = { true, 50 }, -- [[ Enabled, Distance ]]
     --------------------------------------------------------------------------------------------------------------------------------------------------------------------------
     ["SILENT_FOVColor"] = Color3.fromRGB(188, 155, 182),
     ["SILENT_FOVRadius"] = 100,
