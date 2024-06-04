@@ -1,14 +1,20 @@
 getgenv().Script = {
     ["GLOBAL_Key"] = "",
     ["GLOBAL_Intro"] = true,
-    ["GLOBAL_Spoofer"] = true,
     ["GLOBAL_Resolver"] = true,
     ["GLOBAL_VelocityMode"] = "Roblox", --[[ Changing to "Custom" may help with velocity resolving ]]
     ["GLOBAL_Unload"] = false,
     ["GLOBAL_UnlockFPS"] = true,
     ["GLOBAL_FPSCap"] = 999,
     --------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-    ["FRAMEWORK_Threading"] = {["Main Threads"] = "RenderStepped", ["Other Threads"] = "RenderStepped"}, --[[ https://create.roblox.com/docs/reference/engine/classes/RunService ]]
+    ["FRAMEWORK_Threading"] = { ["Main Threads"] = "RenderStepped", ["Other Threads"] = "RenderStepped" }, --[[ https://create.roblox.com/docs/reference/engine/classes/RunService ]]
+    ["FRAMEWORK_ThreadSwapChain"] = { ["Main Threads"] = "Heartbeat", ["Other Threads"] = "Heartbeat" },   --[[ https://create.roblox.com/docs/reference/engine/classes/RunService ]]
+    ["FRAMEWORK_EnableAimbotThread"] = true, -- [[ Use Cases: Any sort of auto / script generated prediction ]] > Note: keep on false for lowest fps usage
+    ["FRAMEWORK_AimbotThreadRefreshRate"] = 1, -- [[ Higher: More delayed, vise versa ]] > Note: higher for better fps
+    ["FRAMEWORK_EnableVisualThread"] = false, -- [[ Use Cases: All drawings, including fov circles, fovbox, raid awareness. etc ]] > Note: keep on false for lowest fps usage
+    ["FRAMEWORK_VisualThreadRefreshRate"] = 10, -- [[ Higher: More delayed, vise versa ]] > Note: higher for better fps
+    ["FRAMEWORK_EnableMiscThread"] = false, -- [[ Use Cases: Any sort of auto / script generated prediction ]] > Note: keep on false for lowest fps usage
+    ["FRAMEWORK_MiscThreadRefreshRate"] = 100, -- [[ Higher: More delayed, vise versa ]] > Note: higher for better fps
     --------------------------------------------------------------------------------------------------------------------------------------------------------------------------
     ["LUAS_SafeMode"] = false,
     ["LUAS_AllowOutput"] = true,
@@ -26,7 +32,6 @@ getgenv().Script = {
     ["SAFETY_UnloadBind"] = "T",
     ["SAFETY_HideVisualBind"] = "H",
     ["SAFETY_AntiAimViewer"] = true,
-    ["SAFETY_AntiGroundShots"] = false,
     ["SAFETY_AntiClientCurve"] = false,
     --------------------------------------------------------------------------------------------------------------------------------------------------------------------------
     ["UNIVERSAL_Enabled"] = false,  
@@ -45,21 +50,19 @@ getgenv().Script = {
     ["SILENT_FOVType"] = "CircleFOV", -- [[ CircleFOV, BoxFOV ]]
     ["SILENT_Mode"] = "FOV", -- [[ FOV, Target ]]
     ["SILENT_TargetBind"] = "Z", -- > Note: Only works with target mode
-    ["SILENT_Synchronize"] = false, -- > Note: Only works with target mode
-    ["SILENT_VisualizeTarget"] = false,
-    ["SILENT_VisualizeSize"] = { 10, 10 }, -- [[ X, Y ]]
-    ["SILENT_VisualizeColor"] = Color3.fromRGB(181, 209, 228),
+    ["SILENT_Synchronize"] = true, -- > Note: Only works with target mode
     ["SILENT_Style"] = "Safe", -- [[ Safe, Blatant ]]
     ["SILENT_AimBone"] = {"UpperTorso"},
     ["SILENT_AimType"] = "Nearest Point", -- [[ Nearest Part, Nearest Point, Blank = AimBone by default ]]
     ["SILENT_NearestType"] = "Scalar", -- [[ Generic, Full, Partial, Scalar ]]
     ["SILENT_UseHitChance"] = false,
     ["SILENT_HitChance"] = 73,
+    ["SILENT_AntiGroundShots"] = false,
     ["SILENT_MaxAntiCurveAngle"] = 7,
     ["SILENT_Predict"] = true,
     ["SILENT_Prediction"] = { 0.145, 0.145, 0.145 }, --[[ X, Y, Z ]]--
+    ["SILENT_AutoPrediction"] = true,
     ["SILENT_PingPrediction"] = false,
-    ["SILENT_AutoPrediction"] = false,
     ["SILENT_PingTable"] = {
         ["20 - 30"] = { 0.11120, 0.11120, 0.11120 }, --[[ X,  Y,  Z ]]--
         ["30 - 40"] = { 0.11614, 0.11614, 0.11614 }, --[[ X,  Y,  Z ]]--
@@ -85,16 +88,18 @@ getgenv().Script = {
     ["ASSIST_Type"] = "Camera", -- [[ Mouse, Camera ]] > Note: Mouse is currently broken due to solara's input library
     ["ASSIST_Deadzone"] = false,
     ["ASSIST_Keybind"] = "C",
+    ["ASSIST_HoldMode"] = true,
     ["ASSIST_Sticky"] = true,
-    ["ASSIST_AimBone"] = {"Head","HumanoidRootPart"},
-    ["ASSIST_SmoothingX"] = 80,
-    ["ASSIST_SmoothingY"] = 80,
+    ["ASSIST_AimBone"] = {"Head"},
+    ["ASSIST_SmoothingX"] = 1000,
+    ["ASSIST_SmoothingY"] = 1000,
     ["ASSIST_StickynessX"] = 1,
     ["ASSIST_StickynessY"] = 1,
+    ["ASSIST_AntiGroundShots"] = false,
     ["ASSIST_Predict"] = true,
     ["ASSIST_Prediction"] = { 0.145, 0.05, 0.145 }, --[[ X, Y, Z ]]--
-    ["ASSIST_PingPrediction"] = false,
     ["ASSIST_AutoPrediction"] = false,
+    ["ASSIST_PingPrediction"] = false,
     ["ASSIST_PingTable"] = { 
         ["20 - 30"] = { 0.11120, 0.11120, 0.11120 }, --[[ X,  Y,  Z ]]--
         ["30 - 40"] = { 0.11614, 0.11614, 0.11614 }, --[[ X,  Y,  Z ]]--
@@ -131,7 +136,7 @@ getgenv().Script = {
     ["DESYNC_EnableOnLowHealth"] = { false, 100 },
     ["DESYNC_NotifyState"] = true,
     --------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-    ["RAID_Enabled"] = false,
+    ["RAID_Enabled"] = true,
     ["RAID_Visuals"] = { ["Box"] = true, ["Names"] = true, ["Lines"] = true, ["List"] = false },
     ["RAID_HideVisuals"] = "Z",
     ["RAID_SelectPlayer"] = "G",
@@ -165,7 +170,7 @@ getgenv().Script = {
     ["AUTOBUY_MediumArmor"] = { true, 50 }, -- [[ Enabled, Distance ]]
     --------------------------------------------------------------------------------------------------------------------------------------------------------------------------
     ["SILENT_FOVColor"] = Color3.fromRGB(188, 155, 182),
-    ["SILENT_FOVRadius"] = 200,
+    ["SILENT_FOVRadius"] = 100,
     ["SILENT_FOVFilled"] = true,
     ["SILENT_FOVVisible"] = true,
     ["SILENT_FOVDynamic"] = false,
