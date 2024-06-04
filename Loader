@@ -9,7 +9,7 @@ getgenv().Script = {
     --------------------------------------------------------------------------------------------------------------------------------------------------------------------------
     ["FRAMEWORK_Threading"] = { ["Main Threads"] = "RenderStepped", ["Other Threads"] = "RenderStepped" }, --[[ https://create.roblox.com/docs/reference/engine/classes/RunService ]]
     ["FRAMEWORK_ThreadSwapChain"] = { ["Main Threads"] = "Heartbeat", ["Other Threads"] = "Heartbeat" },   --[[ https://create.roblox.com/docs/reference/engine/classes/RunService ]]
-    ["FRAMEWORK_EnableAimbotThread"] = true, -- [[ Use Cases: Any sort of auto / script generated prediction ]] > Note: keep on false for lowest fps usage
+    ["FRAMEWORK_EnableAimbotThread"] = true, -- [[ Use cases: aimbot ]] > Note: keep on false for lowest fps usage
     ["FRAMEWORK_AimbotThreadRefreshRate"] = 1, -- [[ Higher: More delayed, vise versa ]] > Note: higher for better fps
     ["FRAMEWORK_EnableVisualThread"] = false, -- [[ Use Cases: All drawings, including fov circles, fovbox, raid awareness. etc ]] > Note: keep on false for lowest fps usage
     ["FRAMEWORK_VisualThreadRefreshRate"] = 60, -- [[ Higher: More delayed, vise versa ]] > Note: higher for better fps
