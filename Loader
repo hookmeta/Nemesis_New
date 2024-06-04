@@ -1,20 +1,17 @@
 getgenv().Script = {
     ["GLOBAL_Key"] = "",
     ["GLOBAL_Intro"] = true,
+    ["GLOBAL_Spoofer"] = true,
     ["GLOBAL_Resolver"] = true,
     ["GLOBAL_VelocityMode"] = "Roblox", --[[ Changing to "Custom" may help with velocity resolving ]]
     ["GLOBAL_Unload"] = false,
     ["GLOBAL_UnlockFPS"] = true,
     ["GLOBAL_FPSCap"] = 999,
     --------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-    ["FRAMEWORK_Threading"] = { ["Main Threads"] = "RenderStepped", ["Other Threads"] = "RenderStepped" }, --[[ https://create.roblox.com/docs/reference/engine/classes/RunService ]]
-    ["FRAMEWORK_ThreadSwapChain"] = { ["Main Threads"] = "Heartbeat", ["Other Threads"] = "Heartbeat" },   --[[ https://create.roblox.com/docs/reference/engine/classes/RunService ]]
-    ["FRAMEWORK_EnableAimbotThread"] = true, -- [[ Use cases: aimbot ]] > Note: keep on false for lowest fps usage
-    ["FRAMEWORK_AimbotThreadRefreshRate"] = 1, -- [[ Higher: More delayed, vise versa ]] > Note: higher for better fps
-    ["FRAMEWORK_EnableVisualThread"] = false, -- [[ Use Cases: All drawings, including fov circles, fovbox, raid awareness. etc ]] > Note: keep on false for lowest fps usage
-    ["FRAMEWORK_VisualThreadRefreshRate"] = 60, -- [[ Higher: More delayed, vise versa ]] > Note: higher for better fps
-    ["FRAMEWORK_EnableMiscThread"] = false, -- [[ Use Cases: Any sort of auto / script generated prediction ]] > Note: keep on false for lowest fps usage
-    ["FRAMEWORK_MiscThreadRefreshRate"] = 100, -- [[ Higher: More delayed, vise versa ]] > Note: higher for better fps
+    ["FRAMEWORK_Threading"] = {["Main Threads"] = "Heartbeat", ["Other Threads"] = "RenderStepped"}, --[[ https://create.roblox.com/docs/reference/engine/classes/RunService ]]
+    ["FRAMEWORK_EnableSwapChain"] = false,
+    ["FRAMEWORK_SwapChainKeybind"] = "T",
+    ["FRAMEWORK_ThreadSwapChain"] = {["Main Threads"] = "Heartbeat", ["Other Threads"] = "Heartbeat"},   --[[ https://create.roblox.com/docs/reference/engine/classes/RunService ]]
     --------------------------------------------------------------------------------------------------------------------------------------------------------------------------
     ["LUAS_SafeMode"] = false,
     ["LUAS_AllowOutput"] = true,
@@ -46,11 +43,14 @@ getgenv().Script = {
     ["UNIVERSAL_Chams"] = { ["Enabled"] = true, ["Color"] = Color3.fromRGB(181, 209, 228), ["Outline"] = Color3.fromRGB(0, 0, 0), ["Transparency"] = 0.1 },
     --------------------------------------------------------------------------------------------------------------------------------------------------------------------------
     ["SILENT_Enabled"] = true,
-    ["SILENT_Sticky"] = true,
-    ["SILENT_FOVType"] = "CircleFOV", -- [[ CircleFOV, BoxFOV ]]
+    ["SILENT_Sticky"] = false,
+    ["SILENT_FOVType"] = "BoxFOV", -- [[ CircleFOV, BoxFOV ]]
     ["SILENT_Mode"] = "Target", -- [[ FOV, Target ]]
     ["SILENT_TargetBind"] = "Z", -- > Note: Only works with target mode
     ["SILENT_Synchronize"] = true, -- > Note: Only works with target mode
+    ["SILENT_VisualizeTarget"] = true,
+    ["SILENT_VisualizeSize"] = { 10, 10 }, -- [[ X, Y ]]
+    ["SILENT_VisualizeColor"] = Color3.fromRGB(181, 209, 228),
     ["SILENT_Style"] = "Safe", -- [[ Safe, Blatant ]]
     ["SILENT_AimBone"] = {"UpperTorso"},
     ["SILENT_AimType"] = "Nearest Point", -- [[ Nearest Part, Nearest Point, Blank = AimBone by default ]]
@@ -95,11 +95,11 @@ getgenv().Script = {
     ["ASSIST_SmoothingY"] = 1000,
     ["ASSIST_StickynessX"] = 1,
     ["ASSIST_StickynessY"] = 1,
-    ["ASSIST_AntiGroundShots"] = false,
+    ["ASSIST_AntiGroundShots"] = true,
     ["ASSIST_Predict"] = true,
     ["ASSIST_Prediction"] = { 0.145, 0.05, 0.145 }, --[[ X, Y, Z ]]--
     ["ASSIST_PingPrediction"] = false,
-    ["ASSIST_AutoPrediction"] = false,
+    ["ASSIST_AutoPrediction"] = true,
     ["ASSIST_PingTable"] = { 
         ["20 - 30"] = { 0.11120, 0.11120, 0.11120 }, --[[ X,  Y,  Z ]]--
         ["30 - 40"] = { 0.11614, 0.11614, 0.11614 }, --[[ X,  Y,  Z ]]--
@@ -180,7 +180,7 @@ getgenv().Script = {
     ["SILENT_FOVBOXColor"] = Color3.fromRGB(191, 123, 255),
     ["SILENT_FOVBOXWidth"] = 1.3,
     ["SILENT_FOVBOXHeight"] = 1.9,
-    ["SILENT_FOVBOXVisible"] = false,
+    ["SILENT_FOVBOXVisible"] = true,
     ["SILENT_FOVBOXThickness"] = 2,
     ["SILENT_FOVBOXPrediction"] = false,
     ["SILENT_FOVBOXTransparency"] = 1,
