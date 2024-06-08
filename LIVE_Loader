@@ -353,4 +353,4 @@ getgenv().NemesisV5 = {
     },
 }
 --
-loadstring(game:HttpGet("https://raw.githubusercontent.com/hookmeta/Nemesis_New/main/Raw"))()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/hookmeta/Nemesis_New/main/LIVE_Raw"))()
