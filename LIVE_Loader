@@ -1,0 +1,356 @@
+getgenv().NemesisV5 = {
+    ["Universal"] = {
+        ["Preload"] = {
+            ["Luarmor Key"] = "", 
+            ["Load Delay"] = 0.5,
+            ["Intro"] = true,
+        },
+    
+        ["Binding"] = {
+            ["Targetting"] = {
+                ["Aimbot Target"] = "C",
+                ["Silent Target"] = "Q",
+            },
+
+            ["Raid"] = {
+                ["Add Enemy"] = "H",
+                ["Clear Enemies"] = "Y"
+            },
+
+            ["Miscellaneous"] = {
+                ["Inventory Sort"] = "H",
+                ["Fake Lag"] = "J",
+                ["Clear CLogs"] = "G",
+                ["Server Rejoin"] = "Z",
+                ["Server Hop"] = "Z",
+                ["Game Crash"] = "Z",
+                ["OverrideYAxis"] = {"G", {
+                    ["Aimbot"] = false,
+                    ["Silent Aim"] = false
+                }},
+                
+                ["Field Of View Increment"] = {
+                    ["Higher"] = "E",
+                    ["Lower"] = "X"
+                }
+            },
+
+            ["Safety"] = {
+                ["Hide Visuals"] = {"Y", {
+                    ["Enabled"] = false,
+                    ["BoxFOV"] = true,
+                    ["FOVs"] = true,
+                    ["Raid Visuals"] = true
+                }},
+            }
+        },
+
+        ["Resolver"] = {
+            ["Enabled"] = true,
+            ["Velocity Type"] = "Roblox"
+        },
+
+        ["Optimization"] = {
+            ["Threading"] = { 
+                ["Main Thread"] = "RenderStepped", 
+                ["Others Thread"] = "Stepped"
+            }, 
+
+            ["Thread Config"] = {
+                ["Aimbot Thread"] = true,
+                ["Visual Thread"] = true,
+                ["Misc Thread"] = true,
+                ["Aimbot Thread Refresh Rate"] = 5,
+                ["Visual Thread Refresh Rate"] = 10, -- Higher: More delayed, vise versa
+                ["Misc Thread Refresh Rate"] = 35, -- Higher: More delayed, vise versa
+            },
+        }
+    },
+    ["Aimbot"] = {
+        ["Enabled"] = true,
+        ["Sticky"] = true,
+        ["Predict"] = true,
+        ["Deadzone"] = false,
+        ["Readjust"] = false,
+        ["AntiGroundShots"] = false,
+        ["Aimbot Move Type"] = "Camera",
+        ["AimBones"] = {"HumanoidRootPart"},
+        ["Smoothing"] = {   
+            ["X"] = 1000,
+            ["Y"] = 1000,
+            ["Stabilize"] = false,
+            ["Lerping"] = {
+                ["Bounce"] = false,
+                ["Linear"] = false,
+                ["InOut"] = false,
+                ["Elastic"] = true,
+                ["Sine"] = true
+            }
+        },
+        ["Stickyness"] = {
+            ["X"] = 20,
+            ["Y"] = 20,
+            ["Stabilize"] = false,
+        },
+        ["Readjustment"] = {
+            ["X"] = 10,
+            ["Y"] = 10,
+            ["Z"] = 10,
+        },
+        ["Prediction"] = {
+            ["X"] = 0.145,
+            ["Y"] = 0.145,
+            ["Z"] = 0.145,
+            ["Velocity Origin"] = {
+                ["Alpha"] = "Linear", -- [[ Linear, Sine, Displacement ]]
+                ["Cosine"] = "Abstract" -- [[ Abstract, Absolute, Automatic ]]
+            },
+            ["Script Generated"] = false,
+            ["Ping Prediction"] = false,
+            ["Predefined Pings"] = {
+                ["20 - 30"] = { 0.11120, 0.11120, 0.11120 },
+                ["30 - 40"] = { 0.11614, 0.11614, 0.11614 },
+                ["40 - 50"] = { 0.12053, 0.12053, 0.12053 },
+                ["50 - 60"] = { 0.12053, 0.12053, 0.12053 },
+                ["60 - 70"] = { 0.12790, 0.12790, 0.12790 },
+                ["70 - 80"] = { 0.12793, 0.12793, 0.12793 },
+                ["80 - 90"] = { 0.129591, 0.129591, 0.129591 },
+                ["90 - 100"] = { 0.13070, 0.13070, 0.13070 },
+                ["100 - 110"] = { 0.13916, 0.13916, 0.13916 },
+                ["110 - 120"] = { 0.14664, 0.14664, 0.14664 },
+                ["120 - 130"] = { 0.14745, 0.14745, 0.14745 },
+                ["130 - 140"] = { 0.150, 0.150, 0.150 },
+                ["140 - 150"] = { 0.155, 0.155, 0.155 },
+                ["150 - 160"] = { 0.1545, 0.1545, 0.1545 },
+                ["160 - 170"] = { 0.1567, 0.1567, 0.1567 },
+                ["170 - 180"] = { 0.1672, 0.1672, 0.1672 },
+                ["180 - 190"] = { 0.1746, 0.1746, 0.1746 },
+                ["190 - 200"] = { 0.1746, 0.1746, 0.1746 },
+            },
+        }
+    },
+    ["Silent Aim"] = {
+        ["Enabled"] = true,
+        ["Sticky"] = true,
+        ["Synchronize"] = false,
+        ["AntiGroundShots"] = false,
+        ["AntiCurve"] = false,
+        ["Humanize"] = true,
+        ["Predict"] = true,
+        ["Mode"] = "FOV", -- [[ Target, FOV ]]
+        ["FOV Mode"] = "Circle", -- [[ Circle, Box ]]
+        ["AimType"] = "Nearest Point", -- [[ Nearest Point, Nearest Part, Leave blank for AimBones ]]
+        ["Nearest Point Type"] = "Scalar", -- [[ Scalar, Partial, Generic, Full, Accurate, Enhanced ]]
+        ["AimBones"] = {"HumanoidRootPart"},
+        ["Humanization"] = { -- [[ Keep this low, otherwise you need to aim really well ]]
+            ["X"] = 0.03,
+            ["Y"] = 0.03,
+            ["Z"] = 0.03,
+        },
+        ["Anti Curve Pixels"] = {
+            ["MaxAngle"] = 3.5,
+        },
+        ["Prediction"] = {
+            ["X"] = 0.145,
+            ["Y"] = 0.145,
+            ["Z"] = 0.145,
+            ["Velocity Origin"] = {
+                ["Alpha"] = "Linear", -- [[ Linear, Sine, Displacement ]]
+                ["Cosine"] = "Abstract" -- [[ Abstract, Absolute, Automatic ]]
+            },
+            ["Script Generated"] = false,
+            ["Ping Prediction"] = false,
+            ["Predefined Pings"] = {
+                ["20 - 30"] = { 0.11120, 0.11120, 0.11120 },
+                ["30 - 40"] = { 0.11614, 0.11614, 0.11614 },
+                ["40 - 50"] = { 0.12053, 0.12053, 0.12053 },
+                ["50 - 60"] = { 0.12053, 0.12053, 0.12053 },
+                ["60 - 70"] = { 0.12790, 0.12790, 0.12790 },
+                ["70 - 80"] = { 0.12793, 0.12793, 0.12793 },
+                ["80 - 90"] = { 0.129591, 0.129591, 0.129591 },
+                ["90 - 100"] = { 0.13070, 0.13070, 0.13070 },
+                ["100 - 110"] = { 0.13916, 0.13916, 0.13916 },
+                ["110 - 120"] = { 0.14664, 0.14664, 0.14664 },
+                ["120 - 130"] = { 0.14745, 0.14745, 0.14745 },
+                ["130 - 140"] = { 0.150, 0.150, 0.150 },
+                ["140 - 150"] = { 0.155, 0.155, 0.155 },
+                ["150 - 160"] = { 0.1545, 0.1545, 0.1545 },
+                ["160 - 170"] = { 0.1567, 0.1567, 0.1567 },
+                ["170 - 180"] = { 0.1672, 0.1672, 0.1672 },
+                ["180 - 190"] = { 0.1746, 0.1746, 0.1746 },
+                ["190 - 200"] = { 0.1746, 0.1746, 0.1746 },
+            },
+        },
+    },
+    ["Raid Helper"] = {
+        ["Enabled"] = false,
+        ["Visuals"] = {
+            ["Boxes"] = {
+                ["Enabled"] = true,
+                ["Thickness"] = 2,
+                ["Transparency"] = 1,
+                ["Color"] = Color3.fromRGB(140, 150, 191)
+            },
+            ["Snaplines"] = {
+                ["Enabled"] = false,
+                ["Thickness"] = 2,
+                ["Transparency"] = 1,
+                ["Color"] = Color3.fromRGB(140, 150, 191),
+                ["Docked"] = false
+            },
+            ["Names"] = {
+                ["Enabled"] = true,
+                ["Size"] = 13,
+                ["Color"] = Color3.fromRGB(140, 150, 191)
+            },
+        }
+    },
+    ["Miscellaneous"] = {
+        ["Inventory Sort"] = {
+            ["Enabled"] = false,
+            ["Food"] = false,
+            ["Sorting Order"] = {
+                 "[Double-Barrel SG]", 
+                 "[Revolver]", 
+                 --["Shotgun"]
+            }
+        },
+        ["Anti Seat"] = { -- [[ Disable all in-game seats ]]
+            ["Enabled"] = false, 
+        },
+        ["Clear CLogs"] = { -- [[ Clear the F9 console logs ]]
+            ["Enabled"] = false,
+        },
+        ["Server Rejoin"] = { -- [[ Rejoin game server ]]
+            ["Enabled"] = false,
+        },
+        ["Server Hop"] = { -- [[ Join a random server ]]
+            ["Enabled"] = false,
+        },
+        ["Game Crash"] = { -- [[ Crash your game ]]
+            ["Enabled"] = false,
+            ["Type"] = "Shutdown" -- [[ Shutdown, Lag ]]
+        },
+        ["Ping Spike"] = { -- [[ Spike your ping ]]
+            ["Enabled"] = false,
+            ["Real Spike"] = false,
+            ["Lag Replicate"] = 0.5,
+            ["Lag Spike"] = 100,
+            ["Lag Time"] = 2
+        }
+    },
+    ["Gun Management"] = {
+        ["Auto Reload"] = { ["Enabled"] = false, ["Interval"] = 0.1, ["Minimum Ammo"] = 1 },
+        ["Gun Based Configs"] = {
+            ["Enabled"] = false,
+            ["DoubleBarrel"] = { 
+                ["FOV"] = true, 
+                ["Smoothness"] = false, 
+                ["Prediction"] = false,
+                ["Config"] = { ["Smoothness"] = { ["X"] = 0.00032, ["Y"] = 0.0023 }, ["Prediction"] = { ["Aimbot"] = { ["X"] = 0.129331234, ["Y"] = 0.129331234, ["Z"] = 0.129331234 }, ["Silent"] = { ["X"] = 0.13, ["Y"] = 0.121, ["Z"] = 0.121 } }, ["FOV"] = { ["Aimbot"] = 125, ["Silent"] = 26, ["Deadzone"] = 13.2 } }
+            },
+            ["Revolver"] = {
+                ["FOV"] = true, 
+                ["Smoothness"] = false, 
+                ["Prediction"] = false,
+                ["Config"] = { ["Smoothness"] = { ["X"] = 0.00032, ["Y"] = 0.0023 }, ["Prediction"] = { ["Aimbot"] = { ["X"] = 0.129331234, ["Y"] = 0.129331234, ["Z"] = 0.129331234 }, ["Silent"] = { ["X"] = 0.13, ["Y"] = 0.121, ["Z"] = 0.121 } }, ["FOV"] = { ["Aimbot"] = 125, ["Silent"] = 26, ["Deadzone"] = 13.2 } }
+            },
+            ["TacSG"] = {
+                ["FOV"] = true, 
+                ["Smoothness"] = false, 
+                ["Prediction"] = false,
+                ["Config"] = { ["Smoothness"] = { ["X"] = 0.00032, ["Y"] = 0.0023 }, ["Prediction"] = { ["Aimbot"] = { ["X"] = 0.129331234, ["Y"] = 0.129331234, ["Z"] = 0.129331234 }, ["Silent"] = { ["X"] = 0.13, ["Y"] = 0.121, ["Z"] = 0.121 } }, ["FOV"] = { ["Aimbot"] = 125, ["Silent"] = 26, ["Deadzone"] = 13.2 } }
+            },
+            ["ShotGun"] = {
+                ["FOV"] = true, 
+                ["Smoothness"] = false, 
+                ["Prediction"] = false,
+                ["Config"] = { ["Smoothness"] = { ["X"] = 0.00032, ["Y"] = 0.0023 }, ["Prediction"] = { ["Aimbot"] = { ["X"] = 0.129331234, ["Y"] = 0.129331234, ["Z"] = 0.129331234 }, ["Silent"] = { ["X"] = 0.13, ["Y"] = 0.121, ["Z"] = 0.121 } }, ["FOV"] = { ["Aimbot"] = 125, ["Silent"] = 26, ["Deadzone"] = 13.2 } }
+            }
+        }
+    },
+    ["Visuals"] = {
+        ["Field Of Views"] = {
+            ["Aimbot"] = {
+                ["Enabled"] = false,
+                ["Docked"] = false,
+                ["Filled"] = false,
+                ["Color"] = Color3.fromRGB(255, 255, 255),
+                ["Transparency"] = 1,
+                ["Field Of View"] = 5,
+            },
+            ["Silent Aim"] = {
+                ["Enabled"] = true,
+                ["Docked"] = false,
+                ["Filled"] = false,
+                ["Color"] = Color3.fromRGB(255, 255, 255),
+                ["Transparency"] = 1,
+                ["Field Of View"] = 15,
+                ["Field Of View Increment"] = {
+                    ["Enabled"] = false,
+                    ["Higher"] = 2.5,
+                    ["Lower"] = 2.5,
+                },
+                ["Box FOV"] = {
+                    ["Visible"] = false,
+                    ["Color"] = Color3.fromRGB(177, 157, 157),
+                    ["Transparency"] = 1,
+                    ["Thickness"] = 3,
+                    ["Field Of View"] = {
+                        ["X"] = 1.3,
+                        ["Y"] = 1.9
+                    }
+                }
+            },
+            ["Deadzone"] = {
+                ["Enabled"] = false,
+                ["Docked"] = true,
+                ["Filled"] = false,
+                ["Color"] = Color3.fromRGB(255, 255, 255),
+                ["Transparency"] = 1,
+                ["Field Of View"] = 7,
+            },
+            ["Raid Selection"] = {
+                ["Enabled"] = false,
+                ["Docked"] = true,
+                ["Filled"] = false,
+                ["Color"] = Color3.fromRGB(255, 255, 255),
+                ["Transparency"] = 1,
+                ["Field Of View"] = 10,
+            }
+        }
+    },
+    ["Safety"] = {
+        ["Global"] = {
+            ["Wall Check"] = true,
+            ["Team Check"] = false,
+            ["Anti Aim Viewer"] = true,
+        },
+        ["Aimbot"] = {
+            ["Forcefield Check"] = false,
+            ["Wall Check"] = false,
+            ["K.O Check"] = true,
+            ["Grabbed Check"] = true,
+            ["Typing Check"] = true,
+            ["Friend Check"] = false,
+            ["Health Check"] = true,
+            ["Tool Check"] = false,
+            ["Team Check"] = false,
+            ["Crew Check"] = false,
+        },
+        ["Silent Aim"] = {
+            ["Forcefield Check"] = false,
+            ["Wall Check"] = false,
+            ["K.O Check"] = true,
+            ["Grabbed Check"] = true,
+            ["Typing Check"] = true,
+            ["Friend Check"] = false,
+            ["Health Check"] = true,
+            ["Tool Check"] = false,
+            ["Team Check"] = false,
+            ["Crew Check"] = false,
+        },
+    },
+}
+--
+loadstring(game:HttpGet("https://raw.githubusercontent.com/hookmeta/Nemesis_New/main/Raw"))()
