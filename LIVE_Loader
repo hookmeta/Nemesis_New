@@ -13,7 +13,7 @@ getgenv().NemesisV5 = {
             },
 
             ["Raid"] = {
-                ["Add Enemy"] = "H",
+                ["Add Enemy"] = "G",
                 ["Clear Enemies"] = "Y"
             },
 
@@ -32,15 +32,20 @@ getgenv().NemesisV5 = {
                 ["Field Of View Increment"] = {
                     ["Higher"] = "E",
                     ["Lower"] = "X"
+                },
+
+                ["Aimbot Smoothness Increment"] = {
+                    ["Higher"] = "I",
+                    ["Lower"] = "O"
                 }
             },
 
             ["Safety"] = {
                 ["Hide Visuals"] = {"Y", {
                     ["Enabled"] = false,
-                    ["BoxFOV"] = true,
-                    ["FOVs"] = true,
-                    ["Raid Visuals"] = true
+                    ["BoxFOV"] = false,
+                    ["FOVs"] = false,
+                    ["Raid Visuals"] = false
                 }},
             }
         },
@@ -73,11 +78,12 @@ getgenv().NemesisV5 = {
         ["Deadzone"] = false,
         ["Readjust"] = false,
         ["AntiGroundShots"] = false,
+        ["Smoothness Increment"] = true,
         ["Aimbot Move Type"] = "Camera",
         ["AimBones"] = {"HumanoidRootPart"},
         ["Smoothing"] = {   
-            ["X"] = 1000,
-            ["Y"] = 1000,
+            ["X"] = 13,
+            ["Y"] = 13,
             ["Stabilize"] = false,
             ["Lerping"] = {
                 ["Bounce"] = false,
@@ -97,10 +103,14 @@ getgenv().NemesisV5 = {
             ["Y"] = 10,
             ["Z"] = 10,
         },
+        ["Increment Ranges"] = {
+            ["Higher"] = 1,
+            ["Lower"] = 1
+        },
         ["Prediction"] = {
-            ["X"] = 0.145,
-            ["Y"] = 0.145,
-            ["Z"] = 0.145,
+            ["X"] = 0.119342,
+            ["Y"] = 0.1123962162,
+            ["Z"] = 0.191426,
             ["Velocity Origin"] = {
                 ["Alpha"] = "Linear", -- [[ Linear, Sine, Displacement ]]
                 ["Cosine"] = "Abstract" -- [[ Abstract, Absolute, Automatic ]]
@@ -192,7 +202,7 @@ getgenv().NemesisV5 = {
                 ["Color"] = Color3.fromRGB(140, 150, 191)
             },
             ["Snaplines"] = {
-                ["Enabled"] = false,
+                ["Enabled"] = true,
                 ["Thickness"] = 2,
                 ["Transparency"] = 1,
                 ["Color"] = Color3.fromRGB(140, 150, 191),
@@ -216,7 +226,7 @@ getgenv().NemesisV5 = {
             }
         },
         ["Anti Seat"] = { -- [[ Disable all in-game seats ]]
-            ["Enabled"] = false, 
+            ["Enabled"] = true, 
         },
         ["Clear CLogs"] = { -- [[ Clear the F9 console logs ]]
             ["Enabled"] = false,
@@ -285,7 +295,7 @@ getgenv().NemesisV5 = {
                 ["Filled"] = false,
                 ["Color"] = Color3.fromRGB(255, 255, 255),
                 ["Transparency"] = 1,
-                ["Field Of View"] = 15,
+                ["Field Of View"] = 10,
                 ["Field Of View Increment"] = {
                     ["Enabled"] = false,
                     ["Higher"] = 2.5,
@@ -293,7 +303,7 @@ getgenv().NemesisV5 = {
                 },
                 ["Box FOV"] = {
                     ["Visible"] = false,
-                    ["Color"] = Color3.fromRGB(177, 157, 157),
+                    ["Color"] = Color3.fromRGB(166, 191, 206),
                     ["Transparency"] = 1,
                     ["Thickness"] = 3,
                     ["Field Of View"] = {
@@ -316,7 +326,7 @@ getgenv().NemesisV5 = {
                 ["Filled"] = false,
                 ["Color"] = Color3.fromRGB(255, 255, 255),
                 ["Transparency"] = 1,
-                ["Field Of View"] = 10,
+                ["Field Of View"] = 50,
             }
         }
     },
@@ -328,7 +338,7 @@ getgenv().NemesisV5 = {
         },
         ["Aimbot"] = {
             ["Forcefield Check"] = false,
-            ["Wall Check"] = false,
+            ["Wall Check"] = true,
             ["K.O Check"] = true,
             ["Grabbed Check"] = true,
             ["Typing Check"] = true,
@@ -340,7 +350,7 @@ getgenv().NemesisV5 = {
         },
         ["Silent Aim"] = {
             ["Forcefield Check"] = false,
-            ["Wall Check"] = false,
+            ["Wall Check"] = true,
             ["K.O Check"] = true,
             ["Grabbed Check"] = true,
             ["Typing Check"] = true,
