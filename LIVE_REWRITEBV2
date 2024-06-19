@@ -99,7 +99,7 @@ getgenv().Nemesis = {
             }
         },
         FOV = {
-            FOVType = 1, -- 1 or 2 or 3
+            FOVType = 1, -- 1, 2, 3, 4
             ShowType2Rectangle = false,
             Type2RectangleThickness = 2,
             BoxWidth = 100,
@@ -290,7 +290,7 @@ getgenv().Nemesis = {
                 },
                 FOV = {
                     Close = {
-                        FOVType = 2, -- 1 or 2 or 3
+                        FOVType = 2, -- 1, 2, 3, 4
                         ShowType2Rectangle = true,
                         Type2RectangleThickness = 2,
                         BoxWidth = 150,
@@ -302,7 +302,7 @@ getgenv().Nemesis = {
                         Transparency = 0.25
                     },
                     Mid = {
-                        FOVType = 1, -- 1 or 2 or 3
+                        FOVType = 1, -- 1, 2, 3, 4
                         ShowType2Rectangle = false,
                         Type2RectangleThickness = 2,
                         BoxWidth = 150,
@@ -314,7 +314,7 @@ getgenv().Nemesis = {
                         Transparency = 0.25
                     },
                     Far = {
-                        FOVType = 1, -- 1 or 2 or 3
+                        FOVType = 1, -- 1, 2, 3, 4
                         ShowType2Rectangle = true,
                         Type2RectangleThickness = 2,
                         BoxWidth = 150,
@@ -500,7 +500,7 @@ getgenv().Nemesis = {
                 },
                 FOV = {
                     Close = {
-                        FOVType = 2, -- 1 or 2 or 3
+                        FOVType = 2, -- 1, 2, 3, 4
                         ShowType2Rectangle = false,
                         Type2RectangleThickness = 2,
                         BoxWidth = 80,
@@ -512,7 +512,7 @@ getgenv().Nemesis = {
                         Transparency = 0.25
                     },
                     Mid = {
-                        FOVType = 1, -- 1 or 2 or 3
+                        FOVType = 1, -- 1, 2, 3, 4
                         ShowType2Rectangle = false,
                         Type2RectangleThickness = 2,
                         BoxWidth = 60,
@@ -524,7 +524,7 @@ getgenv().Nemesis = {
                         Transparency = 0.25
                     },
                     Far = {
-                        FOVType = 1, -- 1 or 2 or 3
+                        FOVType = 1, -- 1, 2, 3, 4
                         ShowType2Rectangle = false,
                         Type2RectangleThickness = 2,
                         BoxWidth = 60,
@@ -712,7 +712,7 @@ getgenv().Nemesis = {
                         },
                         FOV = {
                             Close = {
-                                FOVType = 2, -- 1 or 2 or 3
+                                FOVType = 2, -- 1, 2, 3, 4
                                 ShowType2Rectangle = false,
                                 Type2RectangleThickness = 2,
                                 BoxWidth = 80,
@@ -724,7 +724,7 @@ getgenv().Nemesis = {
                                 Transparency = 0.25
                             },
                             Mid = {
-                                FOVType = 1, -- 1 or 2 or 3
+                                FOVType = 1, -- 1, 2, 3, 4
                                 ShowType2Rectangle = false,
                                 Type2RectangleThickness = 2,
                                 BoxWidth = 60,
@@ -736,7 +736,7 @@ getgenv().Nemesis = {
                                 Transparency = 0.25
                             },
                             Far = {
-                                FOVType = 1, -- 1 or 2 or 3
+                                FOVType = 1, -- 1, 2, 3, 4
                                 ShowType2Rectangle = false,
                                 Type2RectangleThickness = 2,
                                 BoxWidth = 60,
