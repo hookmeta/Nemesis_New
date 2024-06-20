@@ -10,7 +10,7 @@ getgenv().Nemesis = {
                 Floor_Velocity = true,
                 Resolver = {
                     Force_Resolver = false, -- to keep it always on w/out any detection
-                    Resolver_Base = "Abstract" -- Abstract, Humanized
+                    Resolver_Base = "Humanized" -- Abstract, Humanized
                 }
             }
         }
@@ -18,6 +18,7 @@ getgenv().Nemesis = {
     Silent = {
         Enabled = true,
         Toggle = "P",
+        Mode = "Aggressive", -- Aggressive, Passive
         Selection = {
             Mode = "FOV", -- FOV - Uses the person nearest to your mouse, Target - Targets your aimbot target, Standalone - Targets any person you click the target key on
             OnShot = true, -- Only selects a target for FOV mode when a tool is activated
@@ -55,13 +56,13 @@ getgenv().Nemesis = {
             Coefficient = 2
         },
         Prediction = {
-            Prediction = 0.13,
-            UseXYZ = false,
+            Prediction = 0.141621,
+            UseXYZ = true,
             UseExpand = false,
             UseAutomatic = false,
             -----------------------------
             X = 0.1194562,
-            Y = 0.1194562,
+            Y = 0.11,
             Z = 0.1194562,
             -----------------------------
             Expand_X = 0.012,
@@ -99,23 +100,32 @@ getgenv().Nemesis = {
             }
         },
         FOV = {
-            FOVType = 2, -- 1 or 2 or 3
+            FOVType = 1, -- 1 or 2 or 3
             ShowType2Rectangle = false,
             Type2RectangleThickness = 2,
-            BoxWidth = 86,
-            BoxHeight = 65,
-            ShowFOV = false,
-            Radius = 50,
+            BoxWidth = 80,
+            BoxHeight = 150,
+            ShowFOV = true,
+            Radius = 60,
             Color = Color3.fromRGB(168, 198, 216),
             Filled = true,
-            Transparency = 0.25
+            Transparency = 0.25,
+            -----------------------------
+            Dynamic = {
+                Enabled = false,
+                -----------------------------
+                MaxRange = 50,
+                MinRange = 10,
+                MaxFOV = 100,
+                MinFOV = 25,
+            }
         },
         AutomaticConfigs = {
             Enabled = false,
             Proximity = {  Close = 15, Mid = 45, Far = 200 },
-            Prediction = false,
-            Parts = false,
-            FOV = false,
+            Prediction = true,
+            Parts = true,
+            FOV = true,
             HitChance = false,
             Pistols = {
                 Part = { 
@@ -290,40 +300,67 @@ getgenv().Nemesis = {
                 },
                 FOV = {
                     Close = {
-                        FOVType = 2, -- 1 or 2 or 3
-                        ShowType2Rectangle = true,
+                        FOVType = 1, -- 1 or 2 or 3
+                        ShowType2Rectangle = false,
                         Type2RectangleThickness = 2,
-                        BoxWidth = 150,
+                        BoxWidth = 80,
                         BoxHeight = 150,
-                        ShowFOV = false,
-                        Radius = 160,
-                        Color  = Color3.fromRGB(109, 20, 160),
+                        ShowFOV = true,
+                        Radius = 60,
+                        Color = Color3.fromRGB(168, 198, 216),
                         Filled = true,
-                        Transparency = 0.25
+                        Transparency = 0.25,
+                        -----------------------------
+                        Dynamic = {
+                            Enabled = false,
+                            -----------------------------
+                            MaxRange = 50,
+                            MinRange = 10,
+                            MaxFOV = 100,
+                            MinFOV = 25,
+                        }
                     },
                     Mid = {
                         FOVType = 1, -- 1 or 2 or 3
                         ShowType2Rectangle = false,
                         Type2RectangleThickness = 2,
-                        BoxWidth = 150,
+                        BoxWidth = 80,
                         BoxHeight = 150,
                         ShowFOV = true,
                         Radius = 60,
-                        Color  = Color3.fromRGB(168, 198, 216),
+                        Color = Color3.fromRGB(168, 198, 216),
                         Filled = true,
-                        Transparency = 0.25
+                        Transparency = 0.25,
+                        -----------------------------
+                        Dynamic = {
+                            Enabled = false,
+                            -----------------------------
+                            MaxRange = 50,
+                            MinRange = 10,
+                            MaxFOV = 100,
+                            MinFOV = 25,
+                        }
                     },
                     Far = {
                         FOVType = 1, -- 1 or 2 or 3
-                        ShowType2Rectangle = true,
+                        ShowType2Rectangle = false,
                         Type2RectangleThickness = 2,
-                        BoxWidth = 150,
+                        BoxWidth = 80,
                         BoxHeight = 150,
                         ShowFOV = true,
-                        Radius = 6.2,
-                        Color  = Color3.fromRGB(168, 198, 216),
+                        Radius = 60,
+                        Color = Color3.fromRGB(168, 198, 216),
                         Filled = true,
-                        Transparency = 0.25
+                        Transparency = 0.25,
+                        -----------------------------
+                        Dynamic = {
+                            Enabled = false,
+                            -----------------------------
+                            MaxRange = 50,
+                            MinRange = 10,
+                            MaxFOV = 100,
+                            MinFOV = 25,
+                        }
                     }
                 }
             },
@@ -500,257 +537,70 @@ getgenv().Nemesis = {
                 },
                 FOV = {
                     Close = {
-                        FOVType = 2, -- 1 or 2 or 3
+                        FOVType = 1, -- 1 or 2 or 3
                         ShowType2Rectangle = false,
                         Type2RectangleThickness = 2,
                         BoxWidth = 80,
-                        BoxHeight = 95,
-                        ShowFOV = false,
-                        Radius = 160,
-                        Color  = Color3.fromRGB(109, 20, 160),
+                        BoxHeight = 150,
+                        ShowFOV = true,
+                        Radius = 60,
+                        Color = Color3.fromRGB(168, 198, 216),
                         Filled = true,
-                        Transparency = 0.25
+                        Transparency = 0.25,
+                        -----------------------------
+                        Dynamic = {
+                            Enabled = false,
+                            -----------------------------
+                            MaxRange = 50,
+                            MinRange = 10,
+                            MaxFOV = 100,
+                            MinFOV = 25,
+                        }
                     },
                     Mid = {
                         FOVType = 1, -- 1 or 2 or 3
                         ShowType2Rectangle = false,
                         Type2RectangleThickness = 2,
-                        BoxWidth = 60,
-                        BoxHeight = 65,
-                        ShowFOV = false,
-                        Radius = 13.2,
-                        Color  = Color3.fromRGB(168, 198, 216),
+                        BoxWidth = 80,
+                        BoxHeight = 150,
+                        ShowFOV = true,
+                        Radius = 60,
+                        Color = Color3.fromRGB(168, 198, 216),
                         Filled = true,
-                        Transparency = 0.25
+                        Transparency = 0.25,
+                        -----------------------------
+                        Dynamic = {
+                            Enabled = false,
+                            -----------------------------
+                            MaxRange = 50,
+                            MinRange = 10,
+                            MaxFOV = 100,
+                            MinFOV = 25,
+                        }
                     },
                     Far = {
                         FOVType = 1, -- 1 or 2 or 3
                         ShowType2Rectangle = false,
                         Type2RectangleThickness = 2,
-                        BoxWidth = 60,
-                        BoxHeight = 65,
-                        ShowFOV = false,
-                        Radius = 6.2,
-                        Color  = Color3.fromRGB(168, 198, 216),
+                        BoxWidth = 80,
+                        BoxHeight = 150,
+                        ShowFOV = true,
+                        Radius = 60,
+                        Color = Color3.fromRGB(168, 198, 216),
                         Filled = true,
-                        Transparency = 0.25
-                    }
-                }
-            },
-            Automatics = {
-                Part = { 
-                    Close = {
-                        Part = { 
-                            Close = {
-                                UseScaling = false,
-                                Transformation = "CFrame",
-                                HitType = "Nearest Point", -- Nearest Point, Nearest Part
-                                HitFavor = 6, -- 1, 2, 3, 4, 5, 6, 7, 7
-
-                                HitBone = "Head",
-                                -----------------------------
-                                MaxScale = 2,
-                                MinScale = 2,
-                            }, 
-                            Mid = {
-                                UseScaling = false,
-                                Transformation = "Position",
-                                HitType = "Nearest Point", -- Nearest Point, Nearest Part
-                                HitFavor = 7, -- 1, 2, 3, 4, 5, 6, 7, 7
-
-                                HitBone = "HumanoidRootPart",
-                                -----------------------------
-                                MaxScale = 2,
-                                MinScale = 2,
-                            }, 
-                            Far = {
-                                UseScaling = false,
-                                Transformation = "CFrame",
-                                HitType = "Nearest Point", -- Nearest Point, Nearest Part
-                                HitFavor = 6, -- 1, 2, 3, 4, 5, 6, 7, 7
-
-                                HitBone = "HumanoidRootPart",
-                                -----------------------------
-                                MaxScale = 2,
-                                MinScale = 2,
-                            }
-                        },
-                        AntiCurve = {
-                            Close = {
-                                Enabled = false,
-                                AntiCurve = 1.5,
-                                UseXYZ = false,
-                                -----------------------------
-                                X = 2,
-                                Y = 2,
-                                Z = 2,
-                                -----------------------------
-                                Interval = 5 / 10,
-                                Precision = 5,
-                                Coefficient = 2
-                            },
-                            Mid = {
-                                Enabled = false,
-                                AntiCurve = 1.5,
-                                UseXYZ = false,
-                                -----------------------------
-                                X = 2,
-                                Y = 2,
-                                Z = 2,
-                                -----------------------------
-                                Interval = 5 / 10,
-                                Precision = 5,
-                                Coefficient = 2
-                            },
-                            Far = {
-                                Enabled = false,
-                                AntiCurve = 1.5,
-                                UseXYZ = false,
-                                -----------------------------
-                                X = 2,
-                                Y = 2,
-                                Z = 2,
-                                -----------------------------
-                                Interval = 5 / 10,
-                                Precision = 5,
-                                Coefficient = 2
-                            },
-                        },
-                        HitChance = {
-                            Close = {
-                                HitChance = 100,
-                                UseXYZ = false,
-                                -----------------------------
-                                X = 100,
-                                Y = 100,
-                                Z = 100,
-                                -----------------------------
-                                Interval = 5 / 10,
-                                Precision = 5,
-                                Coefficient = 2
-                            },
-                            Mid = {
-                                HitChance = 100,
-                                UseXYZ = false,
-                                -----------------------------
-                                X = 100,
-                                Y = 100,
-                                Z = 100,
-                                -----------------------------
-                                Interval = 5 / 10,
-                                Precision = 5,
-                                Coefficient = 2
-                            },
-                            Far = {
-                                HitChance = 100,
-                                UseXYZ = false,
-                                -----------------------------
-                                X = 100,
-                                Y = 100,
-                                Z = 100,
-                                -----------------------------
-                                Interval = 5 / 10,
-                                Precision = 5,
-                                Coefficient = 2
-                            },
-                        },
-                        Prediction = {
-                            Close = {
-                                Prediction = 0.11572478241,
-                                UseXYZ = true,
-                                UseExpand = false,
-                                UseAutomatic = false,
-                                -----------------------------
-                                X = 0.12572478241934,
-                                Y = 0.125250241,
-                                Z = 0.1257251,
-                                -----------------------------
-                                Expand_X = 0.012,
-                                Expand_Y = 0.012,
-                                Expand_Z = 0.012,
-                                -----------------------------
-                                Interval = 1.5 / 10,
-                                Precision = 4,
-                                Coefficient = 1
-                            },
-                            Mid = {
-                                Prediction = 0.12572478241934,
-                                UseXYZ = true,
-                                UseExpand = false,
-                                UseAutomatic = false,
-                                -----------------------------
-                                X = 0.12572478241934,
-                                Y = 0.125250241,
-                                Z = 0.1257251,
-                                -----------------------------
-                                Expand_X = 0.012,
-                                Expand_Y = 0.012,
-                                Expand_Z = 0.012,
-                                -----------------------------
-                                Interval = 1.5 / 10,
-                                Precision = 4,
-                                Coefficient = 1
-                            },
-                            Far = {
-                                Prediction = 0.12572478241934,
-                                UseXYZ = false,
-                                UseExpand = false,
-                                UseAutomatic = false,
-                                -----------------------------
-                                X = 0.145,
-                                Y = 0.145,
-                                Z = 0.145,
-                                -----------------------------
-                                Expand_X = 0.012,
-                                Expand_Y = 0.012,
-                                Expand_Z = 0.012,
-                                -----------------------------
-                                Interval = 1.5 / 10,
-                                Precision = 4,
-                                Coefficient = 1
-                            }
-                        },
-                        FOV = {
-                            Close = {
-                                FOVType = 2, -- 1 or 2 or 3
-                                ShowType2Rectangle = false,
-                                Type2RectangleThickness = 2,
-                                BoxWidth = 80,
-                                BoxHeight = 95,
-                                ShowFOV = false,
-                                Radius = 160,
-                                Color  = Color3.fromRGB(109, 20, 160),
-                                Filled = true,
-                                Transparency = 0.25
-                            },
-                            Mid = {
-                                FOVType = 1, -- 1 or 2 or 3
-                                ShowType2Rectangle = false,
-                                Type2RectangleThickness = 2,
-                                BoxWidth = 60,
-                                BoxHeight = 65,
-                                ShowFOV = false,
-                                Radius = 13.2,
-                                Color  = Color3.fromRGB(168, 198, 216),
-                                Filled = true,
-                                Transparency = 0.25
-                            },
-                            Far = {
-                                FOVType = 1, -- 1 or 2 or 3
-                                ShowType2Rectangle = false,
-                                Type2RectangleThickness = 2,
-                                BoxWidth = 60,
-                                BoxHeight = 65,
-                                ShowFOV = false,
-                                Radius = 6.2,
-                                Color  = Color3.fromRGB(168, 198, 216),
-                                Filled = true,
-                                Transparency = 0.25
-                            }
+                        Transparency = 0.25,
+                        -----------------------------
+                        Dynamic = {
+                            Enabled = false,
+                            -----------------------------
+                            MaxRange = 50,
+                            MinRange = 10,
+                            MaxFOV = 100,
+                            MinFOV = 25,
                         }
                     }
                 }
-            }
+            },
         },
     },
     Aim_Assist = {
@@ -761,18 +611,18 @@ getgenv().Nemesis = {
         MouseBind = { Enabled = false, "MouseButton2" }, -- only works with hold, u still have to click the toggle key to select a target
         Smoothing = {
             Smoothing = 0.95,
-            UseXY = false,
-            UseLerp = true,
-            UseDynamic = true,
+            UseXY = true,
+            UseLerp = false,
+            UseDynamic = false,
             -----------------------------
-            X = 0.11,
-            Y = 0.11,
+            X = 0.0750,
+            Y = 0.0850,
             -----------------------------
             Lerping = { -- To visualize the effect of these, use Dynamic
                 Bounce = {
                     Enabled = true,
-                    Height = 0.1,
-                    Speed = 3
+                    Height = 0.05,
+                    Speed = 2
                 },
                 Elastic = {
                     Enabled = false,
@@ -792,30 +642,30 @@ getgenv().Nemesis = {
             -----------------------------
             MaxRange = 50,
             MinRange = 5,
-            MaxSmoothness = 0.3,
-            MinSmoothness = 0.1,
+            MaxSmoothness = 0.21,
+            MinSmoothness = 0.025,
         },
         Sensitivity = {
             Sensitivity = 0.25,
-            UseXY = false,
+            UseXY = true,
             -----------------------------
-            X = 0.1,
-            Y = 0.1
+            X = 1,
+            Y = 1
         }, 
         Axis = { -- Enable / Disable velocity on certain axis
             X = { true, "Default" },  -- Default, Minimal, Partial, SmoothOut
-            Y = { true, "Minimal" },  -- Default, Minimal, Partial, SmoothOut
+            Y = { true, "SmoothOut" },  -- Default, Minimal, Partial, SmoothOut
             Z = { true, "Default" },  -- Default, Minimal, Partial, SmoothOut
         },  
         Prediction = {
-            Prediction = 0.11526,
-            UseXYZ = false,
+            Prediction = 0.14276215,
+            UseXYZ = true,
             UseExpand = false,
             UseAutomatic = false,
             -----------------------------
-            X = 0.011,
-            Y = 0.011,
-            Z = 0.011,
+            X = 0.162,
+            Y = 0.0885145934,
+            Z = 0.0885145934,
             -----------------------------
             Expand_X = 0.012,
             Expand_Y = 0.012,
@@ -1280,198 +1130,6 @@ getgenv().Nemesis = {
                         MinScale = 2,
                     }
                 },
-            },
-            Automatics = {
-                Smoothing = { 
-                    Close = {
-                        Smoothing = 0.95,
-                        UseXY = false,
-                        UseLerp = false,
-                        UseDynamic = false,
-                        -----------------------------
-                        X = 0.11,
-                        Y = 0.11,
-                        -----------------------------
-                        --[[
-                            Dynamic smoothness will lower the further you get from the player, vise versa.
-                            you can set a minimum / maximum distance
-                            the minimum distance will start the smoothness shortening once its lower than the maximum distance (math.huge or big numbers wouldnt work very well), vise versa
-            
-                            the settings below can only be used with dynamic mode
-                            
-                        ]]
-                        -----------------------------
-                        MaxRange = 50,
-                        MinRange = 5,
-                        MaxSmoothness = 0.9,
-                        MinSmoothness = 0.1,
-                        -----------------------------
-                        Lerping = {
-                            Bounce = {
-                                Enabled = true,
-                                Height = 0.1,
-                                Speed = 3
-                            },
-                            Elastic = {
-                                Enabled = true,
-                                Height = 0.1,
-                                Speed = 3,
-                                Damping = 1,
-                            }
-                        },
-                    },
-                    Mid = {
-                        Smoothing = 0.95,
-                        UseXY = false,
-                        UseLerp = false,
-                        UseDynamic = false,
-                        -----------------------------
-                        X = 0.11,
-                        Y = 0.11,
-                        -----------------------------
-                        --[[
-                            Dynamic smoothness will lower the further you get from the player, vise versa.
-                            you can set a minimum / maximum distance
-                            the minimum distance will start the smoothness shortening once its lower than the maximum distance (math.huge or big numbers wouldnt work very well), vise versa
-            
-                            the settings below can only be used with dynamic mode
-                            
-                        ]]
-                        -----------------------------
-                        MaxRange = 50,
-                        MinRange = 5,
-                        MaxSmoothness = 0.9,
-                        MinSmoothness = 0.1,
-                        -----------------------------
-                        Lerping = {
-                            Bounce = {
-                                Enabled = true,
-                                Height = 0.1,
-                                Speed = 3
-                            },
-                            Elastic = {
-                                Enabled = true,
-                                Height = 0.1,
-                                Speed = 3,
-                                Damping = 1,
-                            }
-                        },
-                    }, 
-                    Far = {
-                        Smoothing = 0.95,
-                        UseXY = false,
-                        UseLerp = false,
-                        UseDynamic = false,
-                        -----------------------------
-                        X = 0.11,
-                        Y = 0.11,
-                        -----------------------------
-                        --[[
-                            Dynamic smoothness will lower the further you get from the player, vise versa.
-                            you can set a minimum / maximum distance
-                            the minimum distance will start the smoothness shortening once its lower than the maximum distance (math.huge or big numbers wouldnt work very well), vise versa
-            
-                            the settings below can only be used with dynamic mode
-                            
-                        ]]
-                        -----------------------------
-                        MaxRange = 50,
-                        MinRange = 5,
-                        MaxSmoothness = 0.9,
-                        MinSmoothness = 0.1,
-                        -----------------------------
-                        Lerping = {
-                            Bounce = {
-                                Enabled = false,
-                                Height = 0.1,
-                                Speed = 3
-                            },
-                            Elastic = {
-                                Enabled = true,
-                                Height = 0.1,
-                                Speed = 3,
-                                Damping = 1,
-                            }
-                        },
-                    }
-                },
-                Prediction = { 
-                    Close = {
-                        Prediction = 0.12572478241934,
-                        UseXYZ = false,
-                        UseAutomatic = false,
-                        -----------------------------
-                        X = 0.145,
-                        Y = 0.145,
-                        Z = 0.145,
-                        -----------------------------
-                        Interval = 1.5 / 10,
-                        Precision = 4,
-                        Coefficient = 1
-                    }, 
-                    Mid = {
-                        Prediction = 0.12572478241934,
-                        UseXYZ = false,
-                        UseAutomatic = false,
-                        -----------------------------
-                        X = 0.145,
-                        Y = 0.145,
-                        Z = 0.145,
-                        -----------------------------
-                        Interval = 1.5 / 10,
-                        Precision = 4,
-                        Coefficient = 1
-                    }, 
-                    Far = {
-                        Prediction = 0.12572478241934,
-                        UseXYZ
-                        = false,
-                        UseAutomatic = false,
-                        -----------------------------
-                        X = 0.145,
-                        Y = 0.145,
-                        Z = 0.145,
-                        -----------------------------
-                        Interval = 1.5 / 10,
-                        Precision = 4,
-                        Coefficient = 1
-                    }
-                },
-                Part = { 
-                    Close = {
-                        UseScaling = false,
-                        Transformation = "Position",
-                        HitType = "Nearest Point", -- Nearest Point, Nearest Part
-                        HitFavor = 7, -- 1, 2, 3, 4, 5, 6, 7, 7
-
-                        HitBone = "HumanoidRootPart",
-                        -----------------------------
-                        MaxScale = 2,
-                        MinScale = 2,
-                    }, 
-                    Mid = {
-                        UseScaling = false,
-                        Transformation = "Position",
-                        HitType = "Nearest Point", -- Nearest Point, Nearest Part
-                        HitFavor = 7, -- 1, 2, 3, 4, 5, 6, 7, 7
-
-                        HitBone = "HumanoidRootPart",
-                        -----------------------------
-                        MaxScale = 2,
-                        MinScale = 2,
-                    }, 
-                    Far = {
-                        UseScaling = false,
-                        Transformation = "Position",
-                        HitType = "Nearest Point", -- Nearest Point, Nearest Part
-                        HitFavor = 7, -- 1, 2, 3, 4, 5, 6, 7, 7
-
-                        HitBone = "HumanoidRootPart",
-                        -----------------------------
-                        MaxScale = 2,
-                        MinScale = 2,
-                    }
-                }
             },
         },
     },
