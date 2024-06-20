@@ -687,6 +687,7 @@ getgenv().Nemesis = {
         Humanization = {
             Enabled = false,
             Humanization = 2,
+            Interval = 0.1,
             UseXYZ = false,
             -----------------------------
             X = 5,
@@ -725,7 +726,7 @@ getgenv().Nemesis = {
                     Filled = false,
                     Color = Color3.fromRGB(255, 255, 255),
                     Transparency = 0.25
-                }
+                },
             }
         },
         Conditions = {
@@ -1200,7 +1201,14 @@ getgenv().Nemesis = {
         MouseBind = { Enabled = false, "MouseButton2" },
         Mode = "Hold" -- Hold, Toggle
     },
-    Other = { 
+    Other = {
+        Visual_Panel = {
+            Enabled = true,
+            Color = Color3.fromRGB(255, 255, 255),
+            Font = "JosefinSans",
+            FontSize = 12,
+            Size = Vector2.new(90, 50)
+        }, 
         Assortment = {
             Enabled = false,
             Keybind = "Z",
