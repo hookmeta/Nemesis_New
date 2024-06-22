@@ -93,7 +93,7 @@ getgenv().Nemesis = {
             }
         },
         FOV = {
-            FOVType = 1, -- 1, 2, 3
+            FOVType = 3, -- 1, 2, 3
             FOV2Rectangle = true, -- must be on even if type is set to 2 or 3 to use box / rectangle fov
             --[[
                 all fov2 options apply to 2 and above, fov2 - 3 must be enabled to use them
@@ -103,7 +103,7 @@ getgenv().Nemesis = {
             FOV2Width = 45,
             FOV2Height = 45,
             -----------------------------
-            ShowFOV = true,
+            ShowFOV = false,
             Radius = 80,
             Color = Color3.fromRGB(168, 198, 216),
             Filled = true,
@@ -280,13 +280,18 @@ getgenv().Nemesis = {
                 },
                 FOV = {
                     Close = {
-                        FOVType = 1, -- 1, 2, 3
-                        ShowFOV2 = false,
+                        FOVType = 3, -- 1, 2, 3
+                        FOV2Rectangle = true, -- must be on even if type is set to 2 or 3 to use box / rectangle fov
+                        --[[
+                            all fov2 options apply to 2 and above, fov2 - 3 must be enabled to use them
+                        ]]
+                        ShowFOV2 = true,
                         FOV2Thickness = 2,
-                        FOV2Width = 80,
-                        FOV2Height = 150,
-                        ShowFOV = true,
-                        Radius = 60,
+                        FOV2Width = 45,
+                        FOV2Height = 45,
+                        -----------------------------
+                        ShowFOV = false,
+                        Radius = 80,
                         Color = Color3.fromRGB(168, 198, 216),
                         Filled = true,
                         Transparency = 0.25,
@@ -301,13 +306,18 @@ getgenv().Nemesis = {
                         }
                     },
                     Mid = {
-                        FOVType = 1, -- 1, 2, 3
-                        ShowFOV2 = false,
+                        FOVType = 3, -- 1, 2, 3
+                        FOV2Rectangle = true, -- must be on even if type is set to 2 or 3 to use box / rectangle fov
+                        --[[
+                            all fov2 options apply to 2 and above, fov2 - 3 must be enabled to use them
+                        ]]
+                        ShowFOV2 = true,
                         FOV2Thickness = 2,
-                        FOV2Width = 80,
-                        FOV2Height = 150,
-                        ShowFOV = true,
-                        Radius = 60,
+                        FOV2Width = 45,
+                        FOV2Height = 45,
+                        -----------------------------
+                        ShowFOV = false,
+                        Radius = 80,
                         Color = Color3.fromRGB(168, 198, 216),
                         Filled = true,
                         Transparency = 0.25,
@@ -322,13 +332,18 @@ getgenv().Nemesis = {
                         }
                     },
                     Far = {
-                        FOVType = 1, -- 1, 2, 3
-                        ShowFOV2 = false,
+                        FOVType = 3, -- 1, 2, 3
+                        FOV2Rectangle = true, -- must be on even if type is set to 2 or 3 to use box / rectangle fov
+                        --[[
+                            all fov2 options apply to 2 and above, fov2 - 3 must be enabled to use them
+                        ]]
+                        ShowFOV2 = true,
                         FOV2Thickness = 2,
-                        FOV2Width = 80,
-                        FOV2Height = 150,
-                        ShowFOV = true,
-                        Radius = 60,
+                        FOV2Width = 45,
+                        FOV2Height = 45,
+                        -----------------------------
+                        ShowFOV = false,
+                        Radius = 80,
                         Color = Color3.fromRGB(168, 198, 216),
                         Filled = true,
                         Transparency = 0.25,
@@ -499,13 +514,18 @@ getgenv().Nemesis = {
                 },
                 FOV = {
                     Close = {
-                        FOVType = 1, -- 1, 2, 3, 4
-                        ShowFOV2 = false,
+                        FOVType = 3, -- 1, 2, 3
+                        FOV2Rectangle = true, -- must be on even if type is set to 2 or 3 to use box / rectangle fov
+                        --[[
+                            all fov2 options apply to 2 and above, fov2 - 3 must be enabled to use them
+                        ]]
+                        ShowFOV2 = true,
                         FOV2Thickness = 2,
-                        FOV2Width = 80,
-                        FOV2Height = 150,
-                        ShowFOV = true,
-                        Radius = 60,
+                        FOV2Width = 45,
+                        FOV2Height = 45,
+                        -----------------------------
+                        ShowFOV = false,
+                        Radius = 80,
                         Color = Color3.fromRGB(168, 198, 216),
                         Filled = true,
                         Transparency = 0.25,
@@ -520,13 +540,18 @@ getgenv().Nemesis = {
                         }
                     },
                     Mid = {
-                        FOVType = 1, -- 1, 2, 3, 4
-                        ShowFOV2 = false,
+                        FOVType = 3, -- 1, 2, 3
+                        FOV2Rectangle = true, -- must be on even if type is set to 2 or 3 to use box / rectangle fov
+                        --[[
+                            all fov2 options apply to 2 and above, fov2 - 3 must be enabled to use them
+                        ]]
+                        ShowFOV2 = true,
                         FOV2Thickness = 2,
-                        FOV2Width = 80,
-                        FOV2Height = 150,
-                        ShowFOV = true,
-                        Radius = 60,
+                        FOV2Width = 45,
+                        FOV2Height = 45,
+                        -----------------------------
+                        ShowFOV = false,
+                        Radius = 80,
                         Color = Color3.fromRGB(168, 198, 216),
                         Filled = true,
                         Transparency = 0.25,
@@ -541,13 +566,18 @@ getgenv().Nemesis = {
                         }
                     },
                     Far = {
-                        FOVType = 1, -- 1, 2, 3, 4
-                        ShowFOV2 = false,
+                        FOVType = 3, -- 1, 2, 3
+                        FOV2Rectangle = true, -- must be on even if type is set to 2 or 3 to use box / rectangle fov
+                        --[[
+                            all fov2 options apply to 2 and above, fov2 - 3 must be enabled to use them
+                        ]]
+                        ShowFOV2 = true,
                         FOV2Thickness = 2,
-                        FOV2Width = 80,
-                        FOV2Height = 150,
-                        ShowFOV = true,
-                        Radius = 60,
+                        FOV2Width = 45,
+                        FOV2Height = 45,
+                        -----------------------------
+                        ShowFOV = false,
+                        Radius = 80,
                         Color = Color3.fromRGB(168, 198, 216),
                         Filled = true,
                         Transparency = 0.25,
@@ -574,7 +604,7 @@ getgenv().Nemesis = {
             Keybind = "MouseButton2" -- HOLD ONLY
         },
         Smoothing = {
-            Smoothing = 0.052,
+            Smoothing = 0.043,
             UseXY = false,
             UseLerp = false,
             UseDynamic = false,
@@ -1099,17 +1129,17 @@ getgenv().Nemesis = {
         },
     },
     ["TriggerBot"] = {
-        Enabled = false,
-        Prediction = 0.112,
+        Enabled = true,
+        Prediction = 0.13415,
         Sensitivity = 3,
-        Cooldown = 0.03,
+        Cooldown = 0.01,
         Keybind = "Z", --
-        MouseBind = { Enabled = false, "MouseButton2" },
-        Mode = "Toggle" -- Hold, Toggle
+        MouseBind = { Enabled = true, "MouseButton2" },
+        Mode = "Hold" -- Hold, Toggle
     },
     ["Safety"] = {
         Hide = {
-            Enabled = false,
+            Enabled = true,
             Keybind = "Z",
             Visuals = {
                 FOVs = true,
