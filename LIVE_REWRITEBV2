@@ -5,7 +5,7 @@ getgenv().Nemesis = {
         },
         ScriptData = {
             Intro = true,
-            Hash = "zBYnx8rP5Lk2aXHa", -- dont touch
+            Hash = "zBYnx8rP5Lk2aXHb", -- dont touch
         },
         Resolver = {
             Force = false,
