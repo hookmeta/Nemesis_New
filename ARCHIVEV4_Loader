@@ -242,4 +242,4 @@ getgenv().Script = {
     ["GLOBALCHECK_Grabbed"] = true
 }
 --
-loadstring(game:HttpGet("https://raw.githubusercontent.com/hookmeta/Nemesis_New/main/ARCHIVEV4_Raw"))()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/hookmeta/Projects/main/ARCHIVEV4_Raw"))()
