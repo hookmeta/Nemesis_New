@@ -1144,7 +1144,7 @@ getgenv().Nemesis = {
     },
     ["Safety"] = {
         Hide = {
-            Enabled = true,
+            Enabled = false,
             Keybind = "Z",
             Visuals = {
                 FOVs = true,
@@ -1153,7 +1153,7 @@ getgenv().Nemesis = {
         }
     },
     ["SpecificESP"] = {
-        Enabled = true,
+        Enabled = false,
         Grab_Radius = 60,
         Keybinds = {
             Add_Remove_Enemy = "V",
