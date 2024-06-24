@@ -5,10 +5,15 @@ getgenv().Nemesis = {
         },
         ScriptData = {
             Intro = true,
-            Hash = "zBYnx8rP5Lk2aXHb", -- dont touch
+            Hash = "zBYnx8rP5Lk2aXHu", -- dont touch
+            Thread = {
+                Aimbot = "NFlag_FCall",
+                Visual = "NFlag_DCall",
+                Other  = "NFlag_DCall"
+            }
         },
         Resolver = {
-            Force = false,
+            Force = true,
             Angles = "Abstract"
         },
     },
@@ -19,13 +24,13 @@ getgenv().Nemesis = {
         Selection = {
             Mode = "FOV", -- FOV - Uses the person nearest to your mouse, Target - Targets your aimbot target, Standalone - Targets any person you click the target key on
             OnShot = true, -- Only selects a target for FOV mode when a tool is activated
-            FOVStick = false, -- Sticky circle FoV
+            FOVStick = true, -- Sticky circle FoV
             StandaloneBind = "V"
         },
         AntiCurve = {
             Enabled = false,
-            MaxAngle = 8.5, -- in 3D space
-            Debug = true, -- print information to help
+            MaxAngle = 9.4231, -- in 3D space
+            Debug = false, -- print information to help
         },
         Axis = { -- Enable / Disable velocity on certain axis
             X = { true, "Default" },  -- Default, Minimal, Partial, SmoothOut
@@ -33,12 +38,12 @@ getgenv().Nemesis = {
             Z = { true, "Default" },  -- Default, Minimal, Partial, SmoothOut
         },  
         HitChance = {
-            HitChance = 100,
-            UseXYZ = true,
+            HitChance = 200,
+            UseXYZ = false,
             -----------------------------
-            X = 300,
-            Y = 300,
-            Z = 300,
+            X = 97,
+            Y = 76,
+            Z = 115,
             -----------------------------
             Interval = 5 / 10,
             Precision = 5,
@@ -50,9 +55,9 @@ getgenv().Nemesis = {
             UseExpand = false,
             UseAutomatic = false,
             -----------------------------
-            X = 0.13415,
-            Y = 0.13415,
-            Z = 0.13415,
+            X = 0.1193425,
+            Y = 0.1193425,
+            Z = 0.1193425,
             -----------------------------
             Expand_X = 0.012,
             Expand_Y = 0.012,
@@ -64,7 +69,7 @@ getgenv().Nemesis = {
         },
         Humanization = {
             Enabled = false,
-            Interval = 5
+            Interval = 2.14
         },
         HitParts = {
             UseScaling = false,
@@ -76,8 +81,8 @@ getgenv().Nemesis = {
             ]]
             HitBone = "HumanoidRootPart",
             -----------------------------
-            MaxScale = 100,
-            MinScale = 100,
+            MaxScale = 23,
+            MinScale = 18,
         },
         Conditions = {
             Global = {
@@ -93,18 +98,18 @@ getgenv().Nemesis = {
             }
         },
         FOV = {
-            FOVType = 3, -- 1, 2, 3
-            FOV2Rectangle = true, -- must be on even if type is set to 2 or 3 to use box / rectangle fov
+            FOVType = 1, -- 1, 2, 3
+            FOV2Rectangle = false, -- must be on even if type is set to 2 or 3 to use box / rectangle fov
             --[[
                 all fov2 options apply to 2 and above, fov2 - 3 must be enabled to use them
             ]]
-            ShowFOV2 = true,
+            ShowFOV2 = false,
             FOV2Thickness = 2,
-            FOV2Width = 45,
-            FOV2Height = 45,
+            FOV2Width = 100,
+            FOV2Height = 100,
             -----------------------------
-            ShowFOV = false,
-            Radius = 80,
+            ShowFOV = true,
+            Radius = 100,
             Color = Color3.fromRGB(168, 198, 216),
             Filled = true,
             Transparency = 0.25,
@@ -116,7 +121,7 @@ getgenv().Nemesis = {
                 MinRange = 10,
                 MaxFOV = 100,
                 MinFOV = 25,
-            }
+            },
         },
         AutomaticConfigs = {
             Enabled = false,
@@ -604,7 +609,7 @@ getgenv().Nemesis = {
             Keybind = "MouseButton2" -- HOLD ONLY
         },
         Smoothing = {
-            Smoothing = 0.043,
+            Smoothing = 0.1,
             UseXY = false,
             UseLerp = false,
             UseDynamic = false,
@@ -652,7 +657,7 @@ getgenv().Nemesis = {
             Z = { true, "Default" },  -- Default, Minimal, Partial, SmoothOut
         },  
         Prediction = {
-            Prediction = 0.14276215,
+            Prediction = 0.23,
             UseXYZ = true,
             UseExpand = false,
             UseAutomatic = false,
@@ -679,10 +684,10 @@ getgenv().Nemesis = {
             Z = 5
         },
         Humanization = {
-            Enabled = false,
+            Enabled = true,
             Humanization = 5,
             Interval = 0.2,
-            UseXYZ = false,
+            UseXYZ = true,
             -----------------------------
             X = 5,
             Y = 5,
@@ -702,10 +707,10 @@ getgenv().Nemesis = {
             MinScale = 2,
         },
         Proximity_Checks = {
-            Inside_FOV = false,
+            Inside_FOV = true,
             Deadzone = false,
             Customization = {
-                FOV = 100,
+                FOV = 150,
                 Deadzone = 15
             },
             Visualize = {
@@ -725,16 +730,16 @@ getgenv().Nemesis = {
         },
         Conditions = {
             Global = {
-                Wall = true,
+                Wall = false,
                 ForceField = false,
                 Friend = false,
             },
             Others = {
                 Knocked = true,
                 Grabbed = true,
-                Typing = false,
+                Typing = true,
                 NoTool = false,
-                Reload = false,
+                Reload = true,
                 ThirdPerson = false
             }
         },
@@ -1129,11 +1134,11 @@ getgenv().Nemesis = {
         },
     },
     ["TriggerBot"] = {
-        Enabled = true,
-        Prediction = 0.13415,
+        Enabled = false,
+        Prediction = 0.03,
         Sensitivity = 3,
         Cooldown = 0.01,
-        Keybind = "Z", --
+        Keybind = "H", --
         MouseBind = { Enabled = true, "MouseButton2" },
         Mode = "Hold" -- Hold, Toggle
     },
@@ -1148,7 +1153,7 @@ getgenv().Nemesis = {
         }
     },
     ["SpecificESP"] = {
-        Enabled = false,
+        Enabled = true,
         Grab_Radius = 60,
         Keybinds = {
             Add_Remove_Enemy = "V",
@@ -1158,7 +1163,7 @@ getgenv().Nemesis = {
         Visuals = {
             Box = {
                 Enabled = true,
-                Color = Color3.fromRGB(255, 255, 255),
+                Color = Color3.fromRGB(202, 154, 200),
                 Transparency = 1,
                 Friendly = {
                     Color = Color3.fromRGB(0, 255, 51),
@@ -1166,7 +1171,7 @@ getgenv().Nemesis = {
                 }
             },
             Lines = {
-                Enabled = true,
+                Enabled = false,
                 Color = Color3.fromRGB(0, 0, 0),
                 Transparency = 1,
                 Friendly = {
@@ -1176,7 +1181,7 @@ getgenv().Nemesis = {
             },
             Names = {
                 Enabled = true,
-                Color = Color3.fromRGB(255, 255, 255),
+                Color = Color3.fromRGB(228, 223, 184),
                 Transparency = 1,
                 Friendly = {
                     Color = Color3.fromRGB(0, 255, 51),
@@ -1188,11 +1193,12 @@ getgenv().Nemesis = {
     ["Other"] = {
         Assortment = {
             Enabled = false,
-            Keybind = "Z",
+            Keybind = "Y",
             Assort_Food = false,
             Assorting = {
                 "[Double-Barrel SG]", 
                 "[Revolver]", 
+                "[Knife]"
             }
         },
         Macro = {
@@ -1212,10 +1218,10 @@ getgenv().Nemesis = {
             Enabled = false,
         },
         Mute_BoomBox = {
-            Enabled = false
+            Enabled = true
         },
         Anti_Sit = {
-            Enabled = false
+            Enabled = true
         },
         Ping_Spike = {
             Enabled = false,
@@ -1226,8 +1232,8 @@ getgenv().Nemesis = {
             Time = 2
         },
         Console_Clear = {
-            Enabled = false,
-            Keybind = "Z"
+            Enabled = true,
+            Keybind = "U"
         },
         Rejoin = {
             Enabled = false,
