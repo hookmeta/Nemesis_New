@@ -5,7 +5,7 @@ getgenv().Nemesis = {
         },
         ScriptData = {
             Intro = true,
-            Hash = "zBYnx8rP5Lk2aXHu", -- dont touch
+            Hash = "zBYnx8rP5Lk2aXHi", -- dont touch
             Thread = {
                 Aimbot = "NFlag_FCall",
                 Visual = "NFlag_DCall",
@@ -16,6 +16,33 @@ getgenv().Nemesis = {
             Force = true,
             Angles = "Abstract"
         },
+    },
+    ["AI"] = {
+        Enabled = true,
+        Hit_Predictor = {
+            Enabled = true,
+            Visualize = true,
+            Size = 4,
+            Filled = true,
+            Color = Color3.fromRGB(169, 212, 218),
+            -----------------------------
+            Average_Delay = 0.1,
+            Max_Delay = 0.2,
+            -----------------------------
+            Average_Speed = 50,
+            Max_Speed = 100,
+            -----------------------------
+            Average_Range = 100,
+            Max_Range = 200
+        },
+        Auto_Aim = {
+            Enabled = false,
+            Configuration = {
+                Stickyness = Vector2.new(5, 4),
+                Max_Smoothness = 5,
+                Prediction = false,
+            }
+        }
     },
     ["Silent"] = {
         Enabled = true,
@@ -55,9 +82,9 @@ getgenv().Nemesis = {
             UseExpand = false,
             UseAutomatic = false,
             -----------------------------
-            X = 0.1193425,
-            Y = 0.1193425,
-            Z = 0.1193425,
+            X = 0.11934,
+            Y = 0.11934,
+            Z = 0.11934,
             -----------------------------
             Expand_X = 0.012,
             Expand_Y = 0.012,
@@ -74,7 +101,7 @@ getgenv().Nemesis = {
         HitParts = {
             UseScaling = false,
             Transformation = "Position",
-            HitType = "Nearest Point", -- Nearest Point, Nearest Part
+            HitType = "", -- Nearest Point, Nearest Part
             HitFavor = 7, -- 1, 2, 3, 4, 5, 6, 7, 8
             --[[
                 HitFavors 1-6 can only be used with the "CFrame" transformation, for 7 and above use "Position"
@@ -662,9 +689,9 @@ getgenv().Nemesis = {
             UseExpand = false,
             UseAutomatic = false,
             -----------------------------
-            X = 0.145,
-            Y = 0.145,
-            Z = 0.145,
+            X = 0.11934,
+            Y = 0.11934,
+            Z = 0.11934,
             -----------------------------
             Expand_X = 0.012,
             Expand_Y = 0.012,
@@ -684,7 +711,7 @@ getgenv().Nemesis = {
             Z = 5
         },
         Humanization = {
-            Enabled = true,
+            Enabled = false,
             Humanization = 5,
             Interval = 0.2,
             UseXYZ = true,
@@ -1134,13 +1161,14 @@ getgenv().Nemesis = {
         },
     },
     ["TriggerBot"] = {
-        Enabled = false,
+        Enabled = true,
+        Ai_Prediction = true, -- applies all ai prediction to aimbot
         Prediction = 0.03,
-        Sensitivity = 3,
+        Sensitivity = 5,
         Cooldown = 0.01,
         Keybind = "H", --
         MouseBind = { Enabled = true, "MouseButton2" },
-        Mode = "Hold" -- Hold, Toggle
+        Mode = "Toggle" -- Hold, Toggle
     },
     ["Safety"] = {
         Hide = {
@@ -1148,7 +1176,8 @@ getgenv().Nemesis = {
             Keybind = "Z",
             Visuals = {
                 FOVs = true,
-                BoxFOV = true
+                BoxFOV = true,
+                AI = true,
             }
         }
     },
