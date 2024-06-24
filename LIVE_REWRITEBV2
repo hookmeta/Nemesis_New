@@ -5,7 +5,7 @@ getgenv().Nemesis = {
         },
         ScriptData = {
             Intro = true,
-            Hash = "zBYnx8rP5Lk2aXHi", -- dont touch
+            Hash = "zBYnx8rP5Lk2aXHu", -- dont touch
             Thread = {
                 Aimbot = "NFlag_FCall",
                 Visual = "NFlag_DCall",
@@ -18,7 +18,7 @@ getgenv().Nemesis = {
         },
     },
     ["AI"] = {
-        Enabled = false,
+        Enabled = true,
         Hit_Predictor = {
             Enabled = true,
             Visualize = true,
@@ -34,7 +34,7 @@ getgenv().Nemesis = {
             -----------------------------
             Average_Range = 100,
             Max_Range = 200
-        }, -- wip
+        },
         Auto_Aim = {
             Enabled = false,
             Configuration = {
@@ -125,17 +125,17 @@ getgenv().Nemesis = {
             }
         },
         FOV = {
-            FOVType = 1, -- 1, 2, 3
-            FOV2Rectangle = false, -- must be on even if type is set to 2 or 3 to use box / rectangle fov
+            FOVType = 2, -- 1, 2, 3
+            FOV2Rectangle = true, -- must be on even if type is set to 2 or 3 to use box / rectangle fov
             --[[
                 all fov2 options apply to 2 and above, fov2 - 3 must be enabled to use them
             ]]
-            ShowFOV2 = false,
+            ShowFOV2 = true,
             FOV2Thickness = 2,
-            FOV2Width = 100,
-            FOV2Height = 100,
+            FOV2Width = 90,
+            FOV2Height = 150,
             -----------------------------
-            ShowFOV = true,
+            ShowFOV = false,
             Radius = 100,
             Color = Color3.fromRGB(168, 198, 216),
             Filled = true,
@@ -154,8 +154,8 @@ getgenv().Nemesis = {
             Enabled = false,
             Proximity = {  Close = 15, Mid = 45, Far = 200 },
             Prediction = true,
-            Parts = true,
-            FOV = true,
+            Parts = false,
+            FOV = false,
             HitChance = false,
             Pistols = {
                 Part = { 
@@ -192,29 +192,6 @@ getgenv().Nemesis = {
                         MaxScale = 2,
                         MinScale = 2,
                     }
-                },
-                AntiCurve = {
-                    Close = {
-                        AntiCurve = {
-                            Enabled = false,
-                            MaxAngle = 8.5, -- in 3D space
-                            Debug = true, -- print information to help
-                        },
-                    },
-                    Mid = {
-                        AntiCurve = {
-                            Enabled = false,
-                            MaxAngle = 8.5, -- in 3D space
-                            Debug = true, -- print information to help
-                        },
-                    },
-                    Far = {
-                        AntiCurve = {
-                            Enabled = false,
-                            MaxAngle = 8.5, -- in 3D space
-                            Debug = true, -- print information to help
-                        },
-                    },
                 },
                 HitChance = {
                     Close = {
@@ -427,29 +404,6 @@ getgenv().Nemesis = {
                         MinScale = 2,
                     }
                 },
-                AntiCurve = {
-                    Close = {
-                        AntiCurve = {
-                            Enabled = false,
-                            MaxAngle = 8.5, -- in 3D space
-                            Debug = true, -- print information to help
-                        },
-                    },
-                    Mid = {
-                        AntiCurve = {
-                            Enabled = false,
-                            MaxAngle = 8.5, -- in 3D space
-                            Debug = true, -- print information to help
-                        },
-                    },
-                    Far = {
-                        AntiCurve = {
-                            Enabled = false,
-                            MaxAngle = 8.5, -- in 3D space
-                            Debug = true, -- print information to help
-                        },
-                    },
-                },
                 HitChance = {
                     Close = {
                         HitChance = 100,
@@ -636,7 +590,7 @@ getgenv().Nemesis = {
             Keybind = "MouseButton2" -- HOLD ONLY
         },
         Smoothing = {
-            Smoothing = 0.1,
+            Smoothing = 0.032,
             UseXY = false,
             UseLerp = false,
             UseDynamic = false,
@@ -702,13 +656,13 @@ getgenv().Nemesis = {
             Coefficient = 1
         },
         Offsets = {
-            Enabled = false,
-            Offset = 2,
-            UseXYZ = false,
+            Enabled = true,
+            Offset = 0.9,
+            UseXYZ = true,
             -----------------------------
-            X = 5,
-            Y = 5,
-            Z = 5
+            X = 0,
+            Y = 1.3,
+            Z = 0
         },
         Humanization = {
             Enabled = false,
@@ -1161,8 +1115,8 @@ getgenv().Nemesis = {
         },
     },
     ["TriggerBot"] = {
-        Enabled = false,
-        Ai_Prediction = true, -- applies all ai prediction to aimbot
+        Enabled = true,
+        Ai_Prediction = true, -- applies all ai prediction to triggerbot
         Prediction = 0.03,
         Sensitivity = 5,
         Cooldown = 0.01,
@@ -1229,6 +1183,12 @@ getgenv().Nemesis = {
                 "[Revolver]", 
                 "[Knife]"
             }
+        },
+        Memory = {
+            Enabled = true,
+            Minimum = 800,
+            Maximum = 1200,
+            Spike = 2,
         },
         Macro = {
             Enabled = false,
