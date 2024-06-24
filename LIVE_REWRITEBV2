@@ -18,7 +18,7 @@ getgenv().Nemesis = {
         },
     },
     ["AI"] = {
-        Enabled = true,
+        Enabled = false,
         Hit_Predictor = {
             Enabled = true,
             Visualize = true,
@@ -34,7 +34,7 @@ getgenv().Nemesis = {
             -----------------------------
             Average_Range = 100,
             Max_Range = 200
-        },
+        }, -- wip
         Auto_Aim = {
             Enabled = false,
             Configuration = {
@@ -1161,7 +1161,7 @@ getgenv().Nemesis = {
         },
     },
     ["TriggerBot"] = {
-        Enabled = true,
+        Enabled = false,
         Ai_Prediction = true, -- applies all ai prediction to aimbot
         Prediction = 0.03,
         Sensitivity = 5,
