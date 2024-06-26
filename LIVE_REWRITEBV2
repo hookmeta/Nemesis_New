@@ -12,8 +12,8 @@ getgenv().Nemesis = {
             Angles = "Abstract", -- Abstract, Humanized
             Flags = { -- this will be ignored if Force is true
                 Abnormal = true,
-                Forcing = { true, 10 },
-                Above = { true, 36 }, -- this may randomly activate since its wip
+                Forcing = { false, 10 },
+                Above = { false, 36 }, -- this may randomly activate since its wip
             }
         },
     },
