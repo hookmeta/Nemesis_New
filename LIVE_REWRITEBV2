@@ -5,54 +5,26 @@ getgenv().Nemesis = {
         },
         ScriptData = {
             Intro = true,
-            Hash = "zBYnx8rP5Lk2aXH732u", -- dont touch
+            Hash = "zBYnx8rP5Lk2aXHu", -- dont touch
+            Thread = { -- todo
+                Aimbot = "NFlag_FCall",
+                Visual = "NFlag_DCall",
+                Other  = "NFlag_DCall"
+            }
         },
         Resolver = {
-            Force = false, -- keep resolver always on
-            Angles = "Abstract", -- Abstract, Humanized
-            Flags = { -- this will be ignored if Force is true
-                Abnormal = true,
-                Forcing = { false, 10 },
-                Above = { false, 36 }, -- this may randomly activate since its wip
-            }
+            Force = false,
+            Angles = "Abstract"
         },
-    },
-    ["AI"] = {
-        Enabled = false,
-        Hit_Predictor = {
-            Enabled = true,
-            Visualize = true,
-            Size = 4,
-            Filled = true,
-            Color = Color3.fromRGB(169, 212, 218),
-            -----------------------------
-            Average_Delay = 0.1,
-            Max_Delay = 0.2,
-            -----------------------------
-            Average_Speed = 50,
-            Max_Speed = 100,
-            -----------------------------
-            Average_Range = 100,
-            Max_Range = 200
-        },
-        Auto_Aim = { -- todo
-            Enabled = false,
-            Configuration = {
-                Stickyness = Vector2.new(5, 4),
-                Max_Smoothness = 5,
-                Prediction = false,
-            }
-        }
     },
     ["Silent"] = {
         Enabled = true,
         Toggle = "P",
-        Mode = "Passive",
-        FocusedColor = Color3.fromRGB(197, 142, 142),
+        Mode = "Aggressive", 
         Selection = {
             Mode = "FOV", -- FOV - Uses the person nearest to your mouse, Target - Targets your aimbot target, Standalone - Targets any person you click the target key on
             OnShot = true, -- Only selects a target for FOV mode when a tool is activated
-            FOVStick = false, -- Sticky circle FoV
+            FOVStick = true, -- Sticky circle FoV
             StandaloneBind = "V"
         },
         AntiCurve = {
@@ -82,8 +54,6 @@ getgenv().Nemesis = {
             UseXYZ = true,
             UseExpand = false,
             UseAutomatic = false,
-            UsePingPrediction = false,
-            UseScriptGenerated = false,
             -----------------------------
             X = 0.12962616,
             Y = 0.12962616,
@@ -95,28 +65,7 @@ getgenv().Nemesis = {
             -----------------------------
             Interval = 1.5 / 10,
             Precision = 4,
-            Coefficient = 1,
-            -----------------------------
-            PingRanges = {
-                ["20 - 30"] = { Prediction = 0.11, { X = 0.13, Y = 0.13, Z = 0.13 } },
-                ["30 - 40"] = { Prediction = 0.11614, X = 0.11614, Y = 0.11614, Z = 0.11614 },
-                ["40 - 50"] = { Prediction = 0.12053, X = 0.12053, Y = 0.12053, Z = 0.12053 },
-                ["50 - 60"] = { Prediction = 0.12053, X = 0.12053, Y = 0.12053, Z = 0.12053 },
-                ["60 - 70"] = { Prediction = 0.12790, X = 0.12790, Y = 0.12790, Z = 0.12790 },
-                ["70 - 80"] = { Prediction = 0.12793, X = 0.12793, Y = 0.12793, Z = 0.12793 },
-                ["80 - 90"] = { Prediction = 0.129591, X = 0.129591, Y = 0.129591, Z = 0.129591 },
-                ["90 - 100"] = { Prediction = 0.13070, X = 0.13070, Y = 0.13070, Z = 0.13070 },
-                ["100 - 110"] = { Prediction = 0.13916, X = 0.13916, Y = 0.13916, Z = 0.13916 },
-                ["110 - 120"] = { Prediction = 0.14664, X = 0.14664, Y = 0.14664, Z = 0.14664 },
-                ["120 - 130"] = { Prediction = 0.14745, X = 0.14745, Y = 0.14745, Z = 0.14745 },
-                ["130 - 140"] = { Prediction = 0.150, X = 0.150, Y = 0.150, Z = 0.150 },
-                ["140 - 150"] = { Prediction = 0.155, X = 0.155, Y = 0.155, Z = 0.155 },
-                ["150 - 160"] = { Prediction = 0.1545, X = 0.1545, Y = 0.1545, Z = 0.1545 },
-                ["160 - 170"] = { Prediction = 0.1567, X = 0.1567, Y = 0.1567, Z = 0.1567 },
-                ["170 - 180"] = { Prediction = 0.1672, X = 0.1672, Y = 0.1672, Z = 0.1672 },
-                ["180 - 190"] = { Prediction = 0.1746, X = 0.1746, Y = 0.1746, Z = 0.1746 },
-                ["190 - 200"] = { Prediction = 0.1746, X = 0.1746, Y = 0.1746, Z = 0.1746 },
-            },
+            Coefficient = 1
         },
         Humanization = {
             Enabled = false,
@@ -125,7 +74,7 @@ getgenv().Nemesis = {
         HitParts = {
             UseScaling = false,
             Transformation = "Position",
-            HitType = "Nearest Point", -- Nearest Point, Nearest Part
+            HitType = "", -- Nearest Point, Nearest Part
             HitFavor = 7, -- 1, 2, 3, 4, 5, 6, 7, 8
             --[[
                 HitFavors 1-6 can only be used with the "CFrame" transformation, for 7 and above use "Position"
@@ -149,17 +98,17 @@ getgenv().Nemesis = {
             }
         },
         FOV = {
-            FOVType = 1, -- 1, 2, 3
-            FOV2Rectangle = false, -- must be on even if type is set to 2 or 3 to use box / rectangle fov
+            FOVType = 2, -- 1, 2, 3
+            FOV2Rectangle = true, -- must be on even if type is set to 2 or 3 to use box / rectangle fov
             --[[
                 all fov2 options apply to 2 and above, fov2 - 3 must be enabled to use them
             ]]
-            ShowFOV2 = false,
+            ShowFOV2 = true,
             FOV2Thickness = 2,
             FOV2Width = 90,
             FOV2Height = 150,
             -----------------------------
-            ShowFOV = true,
+            ShowFOV = false,
             Radius = 100,
             Color = Color3.fromRGB(168, 198, 216),
             Filled = true,
@@ -257,16 +206,14 @@ getgenv().Nemesis = {
                 },
                 Prediction = {
                     Close = {
-                        Prediction = 0.141621,
-                        UseXYZ = false,
+                        Prediction = 0.11572478241,
+                        UseXYZ = true,
                         UseExpand = false,
                         UseAutomatic = false,
-                        UsePingPrediction = false,
-                        UseScriptGenerated = false,
                         -----------------------------
-                        X = 0.12962616,
-                        Y = 0.12962616,
-                        Z = 0.12962616,
+                        X = 0.12572478241934,
+                        Y = 0.125250241,
+                        Z = 0.1257251,
                         -----------------------------
                         Expand_X = 0.012,
                         Expand_Y = 0.012,
@@ -274,40 +221,17 @@ getgenv().Nemesis = {
                         -----------------------------
                         Interval = 1.5 / 10,
                         Precision = 4,
-                        Coefficient = 1,
-                        -----------------------------
-                        PingRanges = {
-                            ["20 - 30"] = { Prediction = 0.11, { X = 0.13, Y = 0.13, Z = 0.13 } },
-                            ["30 - 40"] = { Prediction = 0.11614, X = 0.11614, Y = 0.11614, Z = 0.11614 },
-                            ["40 - 50"] = { Prediction = 0.12053, X = 0.12053, Y = 0.12053, Z = 0.12053 },
-                            ["50 - 60"] = { Prediction = 0.12053, X = 0.12053, Y = 0.12053, Z = 0.12053 },
-                            ["60 - 70"] = { Prediction = 0.12790, X = 0.12790, Y = 0.12790, Z = 0.12790 },
-                            ["70 - 80"] = { Prediction = 0.12793, X = 0.12793, Y = 0.12793, Z = 0.12793 },
-                            ["80 - 90"] = { Prediction = 0.129591, X = 0.129591, Y = 0.129591, Z = 0.129591 },
-                            ["90 - 100"] = { Prediction = 0.13070, X = 0.13070, Y = 0.13070, Z = 0.13070 },
-                            ["100 - 110"] = { Prediction = 0.13916, X = 0.13916, Y = 0.13916, Z = 0.13916 },
-                            ["110 - 120"] = { Prediction = 0.14664, X = 0.14664, Y = 0.14664, Z = 0.14664 },
-                            ["120 - 130"] = { Prediction = 0.14745, X = 0.14745, Y = 0.14745, Z = 0.14745 },
-                            ["130 - 140"] = { Prediction = 0.150, X = 0.150, Y = 0.150, Z = 0.150 },
-                            ["140 - 150"] = { Prediction = 0.155, X = 0.155, Y = 0.155, Z = 0.155 },
-                            ["150 - 160"] = { Prediction = 0.1545, X = 0.1545, Y = 0.1545, Z = 0.1545 },
-                            ["160 - 170"] = { Prediction = 0.1567, X = 0.1567, Y = 0.1567, Z = 0.1567 },
-                            ["170 - 180"] = { Prediction = 0.1672, X = 0.1672, Y = 0.1672, Z = 0.1672 },
-                            ["180 - 190"] = { Prediction = 0.1746, X = 0.1746, Y = 0.1746, Z = 0.1746 },
-                            ["190 - 200"] = { Prediction = 0.1746, X = 0.1746, Y = 0.1746, Z = 0.1746 },
-                        },
+                        Coefficient = 1
                     },
                     Mid = {
-                        Prediction = 0.141621,
-                        UseXYZ = false,
+                        Prediction = 0.12572478241934,
+                        UseXYZ = true,
                         UseExpand = false,
                         UseAutomatic = false,
-                        UsePingPrediction = false,
-                        UseScriptGenerated = false,
                         -----------------------------
-                        X = 0.12962616,
-                        Y = 0.12962616,
-                        Z = 0.12962616,
+                        X = 0.12572478241934,
+                        Y = 0.125250241,
+                        Z = 0.1257251,
                         -----------------------------
                         Expand_X = 0.012,
                         Expand_Y = 0.012,
@@ -315,40 +239,17 @@ getgenv().Nemesis = {
                         -----------------------------
                         Interval = 1.5 / 10,
                         Precision = 4,
-                        Coefficient = 1,
-                        -----------------------------
-                        PingRanges = {
-                            ["20 - 30"] = { Prediction = 0.11, { X = 0.13, Y = 0.13, Z = 0.13 } },
-                            ["30 - 40"] = { Prediction = 0.11614, X = 0.11614, Y = 0.11614, Z = 0.11614 },
-                            ["40 - 50"] = { Prediction = 0.12053, X = 0.12053, Y = 0.12053, Z = 0.12053 },
-                            ["50 - 60"] = { Prediction = 0.12053, X = 0.12053, Y = 0.12053, Z = 0.12053 },
-                            ["60 - 70"] = { Prediction = 0.12790, X = 0.12790, Y = 0.12790, Z = 0.12790 },
-                            ["70 - 80"] = { Prediction = 0.12793, X = 0.12793, Y = 0.12793, Z = 0.12793 },
-                            ["80 - 90"] = { Prediction = 0.129591, X = 0.129591, Y = 0.129591, Z = 0.129591 },
-                            ["90 - 100"] = { Prediction = 0.13070, X = 0.13070, Y = 0.13070, Z = 0.13070 },
-                            ["100 - 110"] = { Prediction = 0.13916, X = 0.13916, Y = 0.13916, Z = 0.13916 },
-                            ["110 - 120"] = { Prediction = 0.14664, X = 0.14664, Y = 0.14664, Z = 0.14664 },
-                            ["120 - 130"] = { Prediction = 0.14745, X = 0.14745, Y = 0.14745, Z = 0.14745 },
-                            ["130 - 140"] = { Prediction = 0.150, X = 0.150, Y = 0.150, Z = 0.150 },
-                            ["140 - 150"] = { Prediction = 0.155, X = 0.155, Y = 0.155, Z = 0.155 },
-                            ["150 - 160"] = { Prediction = 0.1545, X = 0.1545, Y = 0.1545, Z = 0.1545 },
-                            ["160 - 170"] = { Prediction = 0.1567, X = 0.1567, Y = 0.1567, Z = 0.1567 },
-                            ["170 - 180"] = { Prediction = 0.1672, X = 0.1672, Y = 0.1672, Z = 0.1672 },
-                            ["180 - 190"] = { Prediction = 0.1746, X = 0.1746, Y = 0.1746, Z = 0.1746 },
-                            ["190 - 200"] = { Prediction = 0.1746, X = 0.1746, Y = 0.1746, Z = 0.1746 },
-                        },
+                        Coefficient = 1
                     },
                     Far = {
-                        Prediction = 0.141621,
+                        Prediction = 0.12572478241934,
                         UseXYZ = false,
                         UseExpand = false,
                         UseAutomatic = false,
-                        UsePingPrediction = false,
-                        UseScriptGenerated = false,
                         -----------------------------
-                        X = 0.12962616,
-                        Y = 0.12962616,
-                        Z = 0.12962616,
+                        X = 0.145,
+                        Y = 0.145,
+                        Z = 0.145,
                         -----------------------------
                         Expand_X = 0.012,
                         Expand_Y = 0.012,
@@ -356,28 +257,7 @@ getgenv().Nemesis = {
                         -----------------------------
                         Interval = 1.5 / 10,
                         Precision = 4,
-                        Coefficient = 1,
-                        -----------------------------
-                        PingRanges = {
-                            ["20 - 30"] = { Prediction = 0.11, { X = 0.13, Y = 0.13, Z = 0.13 } },
-                            ["30 - 40"] = { Prediction = 0.11614, X = 0.11614, Y = 0.11614, Z = 0.11614 },
-                            ["40 - 50"] = { Prediction = 0.12053, X = 0.12053, Y = 0.12053, Z = 0.12053 },
-                            ["50 - 60"] = { Prediction = 0.12053, X = 0.12053, Y = 0.12053, Z = 0.12053 },
-                            ["60 - 70"] = { Prediction = 0.12790, X = 0.12790, Y = 0.12790, Z = 0.12790 },
-                            ["70 - 80"] = { Prediction = 0.12793, X = 0.12793, Y = 0.12793, Z = 0.12793 },
-                            ["80 - 90"] = { Prediction = 0.129591, X = 0.129591, Y = 0.129591, Z = 0.129591 },
-                            ["90 - 100"] = { Prediction = 0.13070, X = 0.13070, Y = 0.13070, Z = 0.13070 },
-                            ["100 - 110"] = { Prediction = 0.13916, X = 0.13916, Y = 0.13916, Z = 0.13916 },
-                            ["110 - 120"] = { Prediction = 0.14664, X = 0.14664, Y = 0.14664, Z = 0.14664 },
-                            ["120 - 130"] = { Prediction = 0.14745, X = 0.14745, Y = 0.14745, Z = 0.14745 },
-                            ["130 - 140"] = { Prediction = 0.150, X = 0.150, Y = 0.150, Z = 0.150 },
-                            ["140 - 150"] = { Prediction = 0.155, X = 0.155, Y = 0.155, Z = 0.155 },
-                            ["150 - 160"] = { Prediction = 0.1545, X = 0.1545, Y = 0.1545, Z = 0.1545 },
-                            ["160 - 170"] = { Prediction = 0.1567, X = 0.1567, Y = 0.1567, Z = 0.1567 },
-                            ["170 - 180"] = { Prediction = 0.1672, X = 0.1672, Y = 0.1672, Z = 0.1672 },
-                            ["180 - 190"] = { Prediction = 0.1746, X = 0.1746, Y = 0.1746, Z = 0.1746 },
-                            ["190 - 200"] = { Prediction = 0.1746, X = 0.1746, Y = 0.1746, Z = 0.1746 },
-                        },
+                        Coefficient = 1
                     }
                 },
                 FOV = {
@@ -537,16 +417,14 @@ getgenv().Nemesis = {
                 },
                 Prediction = {
                     Close = {
-                        Prediction = 0.141621,
-                        UseXYZ = false,
+                        Prediction = 0.11572478241,
+                        UseXYZ = true,
                         UseExpand = false,
                         UseAutomatic = false,
-                        UsePingPrediction = false,
-                        UseScriptGenerated = false,
                         -----------------------------
-                        X = 0.12962616,
-                        Y = 0.12962616,
-                        Z = 0.12962616,
+                        X = 0.12572478241934,
+                        Y = 0.125250241,
+                        Z = 0.1257251,
                         -----------------------------
                         Expand_X = 0.012,
                         Expand_Y = 0.012,
@@ -554,40 +432,17 @@ getgenv().Nemesis = {
                         -----------------------------
                         Interval = 1.5 / 10,
                         Precision = 4,
-                        Coefficient = 1,
-                        -----------------------------
-                        PingRanges = {
-                            ["20 - 30"] = { Prediction = 0.11, { X = 0.13, Y = 0.13, Z = 0.13 } },
-                            ["30 - 40"] = { Prediction = 0.11614, X = 0.11614, Y = 0.11614, Z = 0.11614 },
-                            ["40 - 50"] = { Prediction = 0.12053, X = 0.12053, Y = 0.12053, Z = 0.12053 },
-                            ["50 - 60"] = { Prediction = 0.12053, X = 0.12053, Y = 0.12053, Z = 0.12053 },
-                            ["60 - 70"] = { Prediction = 0.12790, X = 0.12790, Y = 0.12790, Z = 0.12790 },
-                            ["70 - 80"] = { Prediction = 0.12793, X = 0.12793, Y = 0.12793, Z = 0.12793 },
-                            ["80 - 90"] = { Prediction = 0.129591, X = 0.129591, Y = 0.129591, Z = 0.129591 },
-                            ["90 - 100"] = { Prediction = 0.13070, X = 0.13070, Y = 0.13070, Z = 0.13070 },
-                            ["100 - 110"] = { Prediction = 0.13916, X = 0.13916, Y = 0.13916, Z = 0.13916 },
-                            ["110 - 120"] = { Prediction = 0.14664, X = 0.14664, Y = 0.14664, Z = 0.14664 },
-                            ["120 - 130"] = { Prediction = 0.14745, X = 0.14745, Y = 0.14745, Z = 0.14745 },
-                            ["130 - 140"] = { Prediction = 0.150, X = 0.150, Y = 0.150, Z = 0.150 },
-                            ["140 - 150"] = { Prediction = 0.155, X = 0.155, Y = 0.155, Z = 0.155 },
-                            ["150 - 160"] = { Prediction = 0.1545, X = 0.1545, Y = 0.1545, Z = 0.1545 },
-                            ["160 - 170"] = { Prediction = 0.1567, X = 0.1567, Y = 0.1567, Z = 0.1567 },
-                            ["170 - 180"] = { Prediction = 0.1672, X = 0.1672, Y = 0.1672, Z = 0.1672 },
-                            ["180 - 190"] = { Prediction = 0.1746, X = 0.1746, Y = 0.1746, Z = 0.1746 },
-                            ["190 - 200"] = { Prediction = 0.1746, X = 0.1746, Y = 0.1746, Z = 0.1746 },
-                        },
+                        Coefficient = 1
                     },
                     Mid = {
-                        Prediction = 0.141621,
-                        UseXYZ = false,
+                        Prediction = 0.12572478241934,
+                        UseXYZ = true,
                         UseExpand = false,
                         UseAutomatic = false,
-                        UsePingPrediction = false,
-                        UseScriptGenerated = false,
                         -----------------------------
-                        X = 0.12962616,
-                        Y = 0.12962616,
-                        Z = 0.12962616,
+                        X = 0.12572478241934,
+                        Y = 0.125250241,
+                        Z = 0.1257251,
                         -----------------------------
                         Expand_X = 0.012,
                         Expand_Y = 0.012,
@@ -595,40 +450,17 @@ getgenv().Nemesis = {
                         -----------------------------
                         Interval = 1.5 / 10,
                         Precision = 4,
-                        Coefficient = 1,
-                        -----------------------------
-                        PingRanges = {
-                            ["20 - 30"] = { Prediction = 0.11, { X = 0.13, Y = 0.13, Z = 0.13 } },
-                            ["30 - 40"] = { Prediction = 0.11614, X = 0.11614, Y = 0.11614, Z = 0.11614 },
-                            ["40 - 50"] = { Prediction = 0.12053, X = 0.12053, Y = 0.12053, Z = 0.12053 },
-                            ["50 - 60"] = { Prediction = 0.12053, X = 0.12053, Y = 0.12053, Z = 0.12053 },
-                            ["60 - 70"] = { Prediction = 0.12790, X = 0.12790, Y = 0.12790, Z = 0.12790 },
-                            ["70 - 80"] = { Prediction = 0.12793, X = 0.12793, Y = 0.12793, Z = 0.12793 },
-                            ["80 - 90"] = { Prediction = 0.129591, X = 0.129591, Y = 0.129591, Z = 0.129591 },
-                            ["90 - 100"] = { Prediction = 0.13070, X = 0.13070, Y = 0.13070, Z = 0.13070 },
-                            ["100 - 110"] = { Prediction = 0.13916, X = 0.13916, Y = 0.13916, Z = 0.13916 },
-                            ["110 - 120"] = { Prediction = 0.14664, X = 0.14664, Y = 0.14664, Z = 0.14664 },
-                            ["120 - 130"] = { Prediction = 0.14745, X = 0.14745, Y = 0.14745, Z = 0.14745 },
-                            ["130 - 140"] = { Prediction = 0.150, X = 0.150, Y = 0.150, Z = 0.150 },
-                            ["140 - 150"] = { Prediction = 0.155, X = 0.155, Y = 0.155, Z = 0.155 },
-                            ["150 - 160"] = { Prediction = 0.1545, X = 0.1545, Y = 0.1545, Z = 0.1545 },
-                            ["160 - 170"] = { Prediction = 0.1567, X = 0.1567, Y = 0.1567, Z = 0.1567 },
-                            ["170 - 180"] = { Prediction = 0.1672, X = 0.1672, Y = 0.1672, Z = 0.1672 },
-                            ["180 - 190"] = { Prediction = 0.1746, X = 0.1746, Y = 0.1746, Z = 0.1746 },
-                            ["190 - 200"] = { Prediction = 0.1746, X = 0.1746, Y = 0.1746, Z = 0.1746 },
-                        },
+                        Coefficient = 1
                     },
                     Far = {
-                        Prediction = 0.141621,
+                        Prediction = 0.12572478241934,
                         UseXYZ = false,
                         UseExpand = false,
                         UseAutomatic = false,
-                        UsePingPrediction = false,
-                        UseScriptGenerated = false,
                         -----------------------------
-                        X = 0.12962616,
-                        Y = 0.12962616,
-                        Z = 0.12962616,
+                        X = 0.145,
+                        Y = 0.145,
+                        Z = 0.145,
                         -----------------------------
                         Expand_X = 0.012,
                         Expand_Y = 0.012,
@@ -636,28 +468,7 @@ getgenv().Nemesis = {
                         -----------------------------
                         Interval = 1.5 / 10,
                         Precision = 4,
-                        Coefficient = 1,
-                        -----------------------------
-                        PingRanges = {
-                            ["20 - 30"] = { Prediction = 0.11, { X = 0.13, Y = 0.13, Z = 0.13 } },
-                            ["30 - 40"] = { Prediction = 0.11614, X = 0.11614, Y = 0.11614, Z = 0.11614 },
-                            ["40 - 50"] = { Prediction = 0.12053, X = 0.12053, Y = 0.12053, Z = 0.12053 },
-                            ["50 - 60"] = { Prediction = 0.12053, X = 0.12053, Y = 0.12053, Z = 0.12053 },
-                            ["60 - 70"] = { Prediction = 0.12790, X = 0.12790, Y = 0.12790, Z = 0.12790 },
-                            ["70 - 80"] = { Prediction = 0.12793, X = 0.12793, Y = 0.12793, Z = 0.12793 },
-                            ["80 - 90"] = { Prediction = 0.129591, X = 0.129591, Y = 0.129591, Z = 0.129591 },
-                            ["90 - 100"] = { Prediction = 0.13070, X = 0.13070, Y = 0.13070, Z = 0.13070 },
-                            ["100 - 110"] = { Prediction = 0.13916, X = 0.13916, Y = 0.13916, Z = 0.13916 },
-                            ["110 - 120"] = { Prediction = 0.14664, X = 0.14664, Y = 0.14664, Z = 0.14664 },
-                            ["120 - 130"] = { Prediction = 0.14745, X = 0.14745, Y = 0.14745, Z = 0.14745 },
-                            ["130 - 140"] = { Prediction = 0.150, X = 0.150, Y = 0.150, Z = 0.150 },
-                            ["140 - 150"] = { Prediction = 0.155, X = 0.155, Y = 0.155, Z = 0.155 },
-                            ["150 - 160"] = { Prediction = 0.1545, X = 0.1545, Y = 0.1545, Z = 0.1545 },
-                            ["160 - 170"] = { Prediction = 0.1567, X = 0.1567, Y = 0.1567, Z = 0.1567 },
-                            ["170 - 180"] = { Prediction = 0.1672, X = 0.1672, Y = 0.1672, Z = 0.1672 },
-                            ["180 - 190"] = { Prediction = 0.1746, X = 0.1746, Y = 0.1746, Z = 0.1746 },
-                            ["190 - 200"] = { Prediction = 0.1746, X = 0.1746, Y = 0.1746, Z = 0.1746 },
-                        },
+                        Coefficient = 1
                     }
                 },
                 FOV = {
@@ -753,7 +564,7 @@ getgenv().Nemesis = {
         },
         Smoothing = {
             Smoothing = 0.032,
-            UseXY = true,
+            UseXY = false,
             UseLerp = false,
             UseDynamic = false,
             -----------------------------
@@ -800,16 +611,14 @@ getgenv().Nemesis = {
             Z = { true, "Default" },  -- Default, Minimal, Partial, SmoothOut
         },  
         Prediction = {
-            Prediction = 0.141621,
-            UseXYZ = false,
+            Prediction = 0.23,
+            UseXYZ = true,
             UseExpand = false,
             UseAutomatic = false,
-            UsePingPrediction = false,
-            UseScriptGenerated = false,
             -----------------------------
-            X = 0.12962616,
-            Y = 0.12962616,
-            Z = 0.12962616,
+            X = 0.11934,
+            Y = 0.11934,
+            Z = 0.11934,
             -----------------------------
             Expand_X = 0.012,
             Expand_Y = 0.012,
@@ -817,31 +626,10 @@ getgenv().Nemesis = {
             -----------------------------
             Interval = 1.5 / 10,
             Precision = 4,
-            Coefficient = 1,
-            -----------------------------
-            PingRanges = {
-                ["20 - 30"] = { Prediction = 0.11, { X = 0.13, Y = 0.13, Z = 0.13 } },
-                ["30 - 40"] = { Prediction = 0.11614, X = 0.11614, Y = 0.11614, Z = 0.11614 },
-                ["40 - 50"] = { Prediction = 0.12053, X = 0.12053, Y = 0.12053, Z = 0.12053 },
-                ["50 - 60"] = { Prediction = 0.12053, X = 0.12053, Y = 0.12053, Z = 0.12053 },
-                ["60 - 70"] = { Prediction = 0.12790, X = 0.12790, Y = 0.12790, Z = 0.12790 },
-                ["70 - 80"] = { Prediction = 0.12793, X = 0.12793, Y = 0.12793, Z = 0.12793 },
-                ["80 - 90"] = { Prediction = 0.129591, X = 0.129591, Y = 0.129591, Z = 0.129591 },
-                ["90 - 100"] = { Prediction = 0.13070, X = 0.13070, Y = 0.13070, Z = 0.13070 },
-                ["100 - 110"] = { Prediction = 0.13916, X = 0.13916, Y = 0.13916, Z = 0.13916 },
-                ["110 - 120"] = { Prediction = 0.14664, X = 0.14664, Y = 0.14664, Z = 0.14664 },
-                ["120 - 130"] = { Prediction = 0.14745, X = 0.14745, Y = 0.14745, Z = 0.14745 },
-                ["130 - 140"] = { Prediction = 0.150, X = 0.150, Y = 0.150, Z = 0.150 },
-                ["140 - 150"] = { Prediction = 0.155, X = 0.155, Y = 0.155, Z = 0.155 },
-                ["150 - 160"] = { Prediction = 0.1545, X = 0.1545, Y = 0.1545, Z = 0.1545 },
-                ["160 - 170"] = { Prediction = 0.1567, X = 0.1567, Y = 0.1567, Z = 0.1567 },
-                ["170 - 180"] = { Prediction = 0.1672, X = 0.1672, Y = 0.1672, Z = 0.1672 },
-                ["180 - 190"] = { Prediction = 0.1746, X = 0.1746, Y = 0.1746, Z = 0.1746 },
-                ["190 - 200"] = { Prediction = 0.1746, X = 0.1746, Y = 0.1746, Z = 0.1746 },
-            },
+            Coefficient = 1
         },
         Offsets = {
-            Enabled = false,
+            Enabled = true,
             Offset = 0.9,
             UseXYZ = true,
             -----------------------------
@@ -873,7 +661,7 @@ getgenv().Nemesis = {
             MinScale = 2,
         },
         Proximity_Checks = {
-            Inside_FOV = false,
+            Inside_FOV = true,
             Deadzone = false,
             Customization = {
                 FOV = 150,
@@ -1031,127 +819,43 @@ getgenv().Nemesis = {
                 },
                 Prediction = { 
                     Close = {
-                        Prediction = 0.141621,
+                        Prediction = 0.12572478241934,
                         UseXYZ = false,
-                        UseExpand = false,
                         UseAutomatic = false,
-                        UsePingPrediction = false,
-                        UseScriptGenerated = false,
                         -----------------------------
-                        X = 0.12962616,
-                        Y = 0.12962616,
-                        Z = 0.12962616,
-                        -----------------------------
-                        Expand_X = 0.012,
-                        Expand_Y = 0.012,
-                        Expand_Z = 0.012,
+                        X = 0.145,
+                        Y = 0.145,
+                        Z = 0.145,
                         -----------------------------
                         Interval = 1.5 / 10,
                         Precision = 4,
-                        Coefficient = 1,
-                        -----------------------------
-                        PingRanges = {
-                            ["20 - 30"] = { Prediction = 0.11, { X = 0.13, Y = 0.13, Z = 0.13 } },
-                            ["30 - 40"] = { Prediction = 0.11614, X = 0.11614, Y = 0.11614, Z = 0.11614 },
-                            ["40 - 50"] = { Prediction = 0.12053, X = 0.12053, Y = 0.12053, Z = 0.12053 },
-                            ["50 - 60"] = { Prediction = 0.12053, X = 0.12053, Y = 0.12053, Z = 0.12053 },
-                            ["60 - 70"] = { Prediction = 0.12790, X = 0.12790, Y = 0.12790, Z = 0.12790 },
-                            ["70 - 80"] = { Prediction = 0.12793, X = 0.12793, Y = 0.12793, Z = 0.12793 },
-                            ["80 - 90"] = { Prediction = 0.129591, X = 0.129591, Y = 0.129591, Z = 0.129591 },
-                            ["90 - 100"] = { Prediction = 0.13070, X = 0.13070, Y = 0.13070, Z = 0.13070 },
-                            ["100 - 110"] = { Prediction = 0.13916, X = 0.13916, Y = 0.13916, Z = 0.13916 },
-                            ["110 - 120"] = { Prediction = 0.14664, X = 0.14664, Y = 0.14664, Z = 0.14664 },
-                            ["120 - 130"] = { Prediction = 0.14745, X = 0.14745, Y = 0.14745, Z = 0.14745 },
-                            ["130 - 140"] = { Prediction = 0.150, X = 0.150, Y = 0.150, Z = 0.150 },
-                            ["140 - 150"] = { Prediction = 0.155, X = 0.155, Y = 0.155, Z = 0.155 },
-                            ["150 - 160"] = { Prediction = 0.1545, X = 0.1545, Y = 0.1545, Z = 0.1545 },
-                            ["160 - 170"] = { Prediction = 0.1567, X = 0.1567, Y = 0.1567, Z = 0.1567 },
-                            ["170 - 180"] = { Prediction = 0.1672, X = 0.1672, Y = 0.1672, Z = 0.1672 },
-                            ["180 - 190"] = { Prediction = 0.1746, X = 0.1746, Y = 0.1746, Z = 0.1746 },
-                            ["190 - 200"] = { Prediction = 0.1746, X = 0.1746, Y = 0.1746, Z = 0.1746 },
-                        },
+                        Coefficient = 1
                     }, 
                     Mid = {
-                        Prediction = 0.141621,
+                        Prediction = 0.12572478241934,
                         UseXYZ = false,
-                        UseExpand = false,
                         UseAutomatic = false,
-                        UsePingPrediction = false,
-                        UseScriptGenerated = false,
                         -----------------------------
-                        X = 0.12962616,
-                        Y = 0.12962616,
-                        Z = 0.12962616,
-                        -----------------------------
-                        Expand_X = 0.012,
-                        Expand_Y = 0.012,
-                        Expand_Z = 0.012,
+                        X = 0.145,
+                        Y = 0.145,
+                        Z = 0.145,
                         -----------------------------
                         Interval = 1.5 / 10,
                         Precision = 4,
-                        Coefficient = 1,
-                        -----------------------------
-                        PingRanges = {
-                            ["20 - 30"] = { Prediction = 0.11, { X = 0.13, Y = 0.13, Z = 0.13 } },
-                            ["30 - 40"] = { Prediction = 0.11614, X = 0.11614, Y = 0.11614, Z = 0.11614 },
-                            ["40 - 50"] = { Prediction = 0.12053, X = 0.12053, Y = 0.12053, Z = 0.12053 },
-                            ["50 - 60"] = { Prediction = 0.12053, X = 0.12053, Y = 0.12053, Z = 0.12053 },
-                            ["60 - 70"] = { Prediction = 0.12790, X = 0.12790, Y = 0.12790, Z = 0.12790 },
-                            ["70 - 80"] = { Prediction = 0.12793, X = 0.12793, Y = 0.12793, Z = 0.12793 },
-                            ["80 - 90"] = { Prediction = 0.129591, X = 0.129591, Y = 0.129591, Z = 0.129591 },
-                            ["90 - 100"] = { Prediction = 0.13070, X = 0.13070, Y = 0.13070, Z = 0.13070 },
-                            ["100 - 110"] = { Prediction = 0.13916, X = 0.13916, Y = 0.13916, Z = 0.13916 },
-                            ["110 - 120"] = { Prediction = 0.14664, X = 0.14664, Y = 0.14664, Z = 0.14664 },
-                            ["120 - 130"] = { Prediction = 0.14745, X = 0.14745, Y = 0.14745, Z = 0.14745 },
-                            ["130 - 140"] = { Prediction = 0.150, X = 0.150, Y = 0.150, Z = 0.150 },
-                            ["140 - 150"] = { Prediction = 0.155, X = 0.155, Y = 0.155, Z = 0.155 },
-                            ["150 - 160"] = { Prediction = 0.1545, X = 0.1545, Y = 0.1545, Z = 0.1545 },
-                            ["160 - 170"] = { Prediction = 0.1567, X = 0.1567, Y = 0.1567, Z = 0.1567 },
-                            ["170 - 180"] = { Prediction = 0.1672, X = 0.1672, Y = 0.1672, Z = 0.1672 },
-                            ["180 - 190"] = { Prediction = 0.1746, X = 0.1746, Y = 0.1746, Z = 0.1746 },
-                            ["190 - 200"] = { Prediction = 0.1746, X = 0.1746, Y = 0.1746, Z = 0.1746 },
-                        },
+                        Coefficient = 1
                     }, 
                     Far = {
-                        Prediction = 0.141621,
+                        Prediction = 0.12572478241934,
                         UseXYZ = false,
-                        UseExpand = false,
                         UseAutomatic = false,
-                        UsePingPrediction = false,
-                        UseScriptGenerated = false,
                         -----------------------------
-                        X = 0.12962616,
-                        Y = 0.12962616,
-                        Z = 0.12962616,
-                        -----------------------------
-                        Expand_X = 0.012,
-                        Expand_Y = 0.012,
-                        Expand_Z = 0.012,
+                        X = 0.145,
+                        Y = 0.145,
+                        Z = 0.145,
                         -----------------------------
                         Interval = 1.5 / 10,
                         Precision = 4,
-                        Coefficient = 1,
-                        -----------------------------
-                        PingRanges = {
-                            ["20 - 30"] = { Prediction = 0.11, { X = 0.13, Y = 0.13, Z = 0.13 } },
-                            ["30 - 40"] = { Prediction = 0.11614, X = 0.11614, Y = 0.11614, Z = 0.11614 },
-                            ["40 - 50"] = { Prediction = 0.12053, X = 0.12053, Y = 0.12053, Z = 0.12053 },
-                            ["50 - 60"] = { Prediction = 0.12053, X = 0.12053, Y = 0.12053, Z = 0.12053 },
-                            ["60 - 70"] = { Prediction = 0.12790, X = 0.12790, Y = 0.12790, Z = 0.12790 },
-                            ["70 - 80"] = { Prediction = 0.12793, X = 0.12793, Y = 0.12793, Z = 0.12793 },
-                            ["80 - 90"] = { Prediction = 0.129591, X = 0.129591, Y = 0.129591, Z = 0.129591 },
-                            ["90 - 100"] = { Prediction = 0.13070, X = 0.13070, Y = 0.13070, Z = 0.13070 },
-                            ["100 - 110"] = { Prediction = 0.13916, X = 0.13916, Y = 0.13916, Z = 0.13916 },
-                            ["110 - 120"] = { Prediction = 0.14664, X = 0.14664, Y = 0.14664, Z = 0.14664 },
-                            ["120 - 130"] = { Prediction = 0.14745, X = 0.14745, Y = 0.14745, Z = 0.14745 },
-                            ["130 - 140"] = { Prediction = 0.150, X = 0.150, Y = 0.150, Z = 0.150 },
-                            ["140 - 150"] = { Prediction = 0.155, X = 0.155, Y = 0.155, Z = 0.155 },
-                            ["150 - 160"] = { Prediction = 0.1545, X = 0.1545, Y = 0.1545, Z = 0.1545 },
-                            ["160 - 170"] = { Prediction = 0.1567, X = 0.1567, Y = 0.1567, Z = 0.1567 },
-                            ["170 - 180"] = { Prediction = 0.1672, X = 0.1672, Y = 0.1672, Z = 0.1672 },
-                            ["180 - 190"] = { Prediction = 0.1746, X = 0.1746, Y = 0.1746, Z = 0.1746 },
-                            ["190 - 200"] = { Prediction = 0.1746, X = 0.1746, Y = 0.1746, Z = 0.1746 },
-                        },
+                        Coefficient = 1
                     }
                 },
                 Part = { 
@@ -1306,127 +1010,43 @@ getgenv().Nemesis = {
                 },
                 Prediction = { 
                     Close = {
-                        Prediction = 0.141621,
+                        Prediction = 0.12572478241934,
                         UseXYZ = false,
-                        UseExpand = false,
                         UseAutomatic = false,
-                        UsePingPrediction = false,
-                        UseScriptGenerated = false,
                         -----------------------------
-                        X = 0.12962616,
-                        Y = 0.12962616,
-                        Z = 0.12962616,
-                        -----------------------------
-                        Expand_X = 0.012,
-                        Expand_Y = 0.012,
-                        Expand_Z = 0.012,
+                        X = 0.145,
+                        Y = 0.145,
+                        Z = 0.145,
                         -----------------------------
                         Interval = 1.5 / 10,
                         Precision = 4,
-                        Coefficient = 1,
-                        -----------------------------
-                        PingRanges = {
-                            ["20 - 30"] = { Prediction = 0.11, { X = 0.13, Y = 0.13, Z = 0.13 } },
-                            ["30 - 40"] = { Prediction = 0.11614, X = 0.11614, Y = 0.11614, Z = 0.11614 },
-                            ["40 - 50"] = { Prediction = 0.12053, X = 0.12053, Y = 0.12053, Z = 0.12053 },
-                            ["50 - 60"] = { Prediction = 0.12053, X = 0.12053, Y = 0.12053, Z = 0.12053 },
-                            ["60 - 70"] = { Prediction = 0.12790, X = 0.12790, Y = 0.12790, Z = 0.12790 },
-                            ["70 - 80"] = { Prediction = 0.12793, X = 0.12793, Y = 0.12793, Z = 0.12793 },
-                            ["80 - 90"] = { Prediction = 0.129591, X = 0.129591, Y = 0.129591, Z = 0.129591 },
-                            ["90 - 100"] = { Prediction = 0.13070, X = 0.13070, Y = 0.13070, Z = 0.13070 },
-                            ["100 - 110"] = { Prediction = 0.13916, X = 0.13916, Y = 0.13916, Z = 0.13916 },
-                            ["110 - 120"] = { Prediction = 0.14664, X = 0.14664, Y = 0.14664, Z = 0.14664 },
-                            ["120 - 130"] = { Prediction = 0.14745, X = 0.14745, Y = 0.14745, Z = 0.14745 },
-                            ["130 - 140"] = { Prediction = 0.150, X = 0.150, Y = 0.150, Z = 0.150 },
-                            ["140 - 150"] = { Prediction = 0.155, X = 0.155, Y = 0.155, Z = 0.155 },
-                            ["150 - 160"] = { Prediction = 0.1545, X = 0.1545, Y = 0.1545, Z = 0.1545 },
-                            ["160 - 170"] = { Prediction = 0.1567, X = 0.1567, Y = 0.1567, Z = 0.1567 },
-                            ["170 - 180"] = { Prediction = 0.1672, X = 0.1672, Y = 0.1672, Z = 0.1672 },
-                            ["180 - 190"] = { Prediction = 0.1746, X = 0.1746, Y = 0.1746, Z = 0.1746 },
-                            ["190 - 200"] = { Prediction = 0.1746, X = 0.1746, Y = 0.1746, Z = 0.1746 },
-                        },
+                        Coefficient = 1
                     }, 
                     Mid = {
-                        Prediction = 0.141621,
+                        Prediction = 0.12572478241934,
                         UseXYZ = false,
-                        UseExpand = false,
                         UseAutomatic = false,
-                        UsePingPrediction = false,
-                        UseScriptGenerated = false,
                         -----------------------------
-                        X = 0.12962616,
-                        Y = 0.12962616,
-                        Z = 0.12962616,
-                        -----------------------------
-                        Expand_X = 0.012,
-                        Expand_Y = 0.012,
-                        Expand_Z = 0.012,
+                        X = 0.145,
+                        Y = 0.145,
+                        Z = 0.145,
                         -----------------------------
                         Interval = 1.5 / 10,
                         Precision = 4,
-                        Coefficient = 1,
-                        -----------------------------
-                        PingRanges = {
-                            ["20 - 30"] = { Prediction = 0.11, { X = 0.13, Y = 0.13, Z = 0.13 } },
-                            ["30 - 40"] = { Prediction = 0.11614, X = 0.11614, Y = 0.11614, Z = 0.11614 },
-                            ["40 - 50"] = { Prediction = 0.12053, X = 0.12053, Y = 0.12053, Z = 0.12053 },
-                            ["50 - 60"] = { Prediction = 0.12053, X = 0.12053, Y = 0.12053, Z = 0.12053 },
-                            ["60 - 70"] = { Prediction = 0.12790, X = 0.12790, Y = 0.12790, Z = 0.12790 },
-                            ["70 - 80"] = { Prediction = 0.12793, X = 0.12793, Y = 0.12793, Z = 0.12793 },
-                            ["80 - 90"] = { Prediction = 0.129591, X = 0.129591, Y = 0.129591, Z = 0.129591 },
-                            ["90 - 100"] = { Prediction = 0.13070, X = 0.13070, Y = 0.13070, Z = 0.13070 },
-                            ["100 - 110"] = { Prediction = 0.13916, X = 0.13916, Y = 0.13916, Z = 0.13916 },
-                            ["110 - 120"] = { Prediction = 0.14664, X = 0.14664, Y = 0.14664, Z = 0.14664 },
-                            ["120 - 130"] = { Prediction = 0.14745, X = 0.14745, Y = 0.14745, Z = 0.14745 },
-                            ["130 - 140"] = { Prediction = 0.150, X = 0.150, Y = 0.150, Z = 0.150 },
-                            ["140 - 150"] = { Prediction = 0.155, X = 0.155, Y = 0.155, Z = 0.155 },
-                            ["150 - 160"] = { Prediction = 0.1545, X = 0.1545, Y = 0.1545, Z = 0.1545 },
-                            ["160 - 170"] = { Prediction = 0.1567, X = 0.1567, Y = 0.1567, Z = 0.1567 },
-                            ["170 - 180"] = { Prediction = 0.1672, X = 0.1672, Y = 0.1672, Z = 0.1672 },
-                            ["180 - 190"] = { Prediction = 0.1746, X = 0.1746, Y = 0.1746, Z = 0.1746 },
-                            ["190 - 200"] = { Prediction = 0.1746, X = 0.1746, Y = 0.1746, Z = 0.1746 },
-                        },
+                        Coefficient = 1
                     }, 
                     Far = {
-                        Prediction = 0.141621,
+                        Prediction = 0.12572478241934,
                         UseXYZ = false,
-                        UseExpand = false,
                         UseAutomatic = false,
-                        UsePingPrediction = false,
-                        UseScriptGenerated = false,
                         -----------------------------
-                        X = 0.12962616,
-                        Y = 0.12962616,
-                        Z = 0.12962616,
-                        -----------------------------
-                        Expand_X = 0.012,
-                        Expand_Y = 0.012,
-                        Expand_Z = 0.012,
+                        X = 0.145,
+                        Y = 0.145,
+                        Z = 0.145,
                         -----------------------------
                         Interval = 1.5 / 10,
                         Precision = 4,
-                        Coefficient = 1,
-                        -----------------------------
-                        PingRanges = {
-                            ["20 - 30"] = { Prediction = 0.11, { X = 0.13, Y = 0.13, Z = 0.13 } },
-                            ["30 - 40"] = { Prediction = 0.11614, X = 0.11614, Y = 0.11614, Z = 0.11614 },
-                            ["40 - 50"] = { Prediction = 0.12053, X = 0.12053, Y = 0.12053, Z = 0.12053 },
-                            ["50 - 60"] = { Prediction = 0.12053, X = 0.12053, Y = 0.12053, Z = 0.12053 },
-                            ["60 - 70"] = { Prediction = 0.12790, X = 0.12790, Y = 0.12790, Z = 0.12790 },
-                            ["70 - 80"] = { Prediction = 0.12793, X = 0.12793, Y = 0.12793, Z = 0.12793 },
-                            ["80 - 90"] = { Prediction = 0.129591, X = 0.129591, Y = 0.129591, Z = 0.129591 },
-                            ["90 - 100"] = { Prediction = 0.13070, X = 0.13070, Y = 0.13070, Z = 0.13070 },
-                            ["100 - 110"] = { Prediction = 0.13916, X = 0.13916, Y = 0.13916, Z = 0.13916 },
-                            ["110 - 120"] = { Prediction = 0.14664, X = 0.14664, Y = 0.14664, Z = 0.14664 },
-                            ["120 - 130"] = { Prediction = 0.14745, X = 0.14745, Y = 0.14745, Z = 0.14745 },
-                            ["130 - 140"] = { Prediction = 0.150, X = 0.150, Y = 0.150, Z = 0.150 },
-                            ["140 - 150"] = { Prediction = 0.155, X = 0.155, Y = 0.155, Z = 0.155 },
-                            ["150 - 160"] = { Prediction = 0.1545, X = 0.1545, Y = 0.1545, Z = 0.1545 },
-                            ["160 - 170"] = { Prediction = 0.1567, X = 0.1567, Y = 0.1567, Z = 0.1567 },
-                            ["170 - 180"] = { Prediction = 0.1672, X = 0.1672, Y = 0.1672, Z = 0.1672 },
-                            ["180 - 190"] = { Prediction = 0.1746, X = 0.1746, Y = 0.1746, Z = 0.1746 },
-                            ["190 - 200"] = { Prediction = 0.1746, X = 0.1746, Y = 0.1746, Z = 0.1746 },
-                        },
+                        Coefficient = 1
                     }
                 },
                 Part = { 
@@ -1468,8 +1088,7 @@ getgenv().Nemesis = {
         },
     },
     ["TriggerBot"] = {
-        Enabled = false,
-        Ai_Prediction = true, -- applies all ai prediction to triggerbot
+        Enabled = true,
         Prediction = 0.03,
         Sensitivity = 5,
         Cooldown = 0.01,
@@ -1479,7 +1098,7 @@ getgenv().Nemesis = {
     },
     ["Safety"] = {
         Hide = {
-            Enabled = false,
+            Enabled = true,
             Keybind = "Z",
             Visuals = {
                 FOVs = true,
@@ -1554,16 +1173,16 @@ getgenv().Nemesis = {
             Speed = 30 -- math.pi / 0.165 = 180 degrees p/s
         },
         Anti_Trip = {
-            Enabled = false
+            Enabled = true
         },
         LowGFX = {
             Enabled = false,
         },
         Mute_BoomBox = {
-            Enabled = false
+            Enabled = true
         },
         Anti_Sit = {
-            Enabled = false
+            Enabled = true
         },
         Ping_Spike = {
             Enabled = false,
@@ -1574,7 +1193,7 @@ getgenv().Nemesis = {
             Time = 2
         },
         Console_Clear = {
-            Enabled = false,
+            Enabled = true,
             Keybind = "U"
         },
         Rejoin = {
