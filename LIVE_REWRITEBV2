@@ -5,20 +5,20 @@ getgenv().Nemesis = {
         },
         ScriptData = {
             Intro = true,
-            Hash = "zBYnx8rP5Lk2aXHu", -- dont touch
-            Thread = {
-                Aimbot = "NFlag_FCall",
-                Visual = "NFlag_DCall",
-                Other  = "NFlag_DCall"
-            }
+            Hash = "zBYnx8rP5Lk2aXH732h", -- dont touch
         },
         Resolver = {
-            Force = true,
-            Angles = "Abstract"
+            Force = false, -- keep resolver always on
+            Angles = "Abstract", -- Abstract, Humanized
+            Flags = { -- this will be ignored if Force is true
+                Abnormal = true,
+                Forcing = { true, 10 },
+                Above = { true, 36 }, -- this may randomly activate since its wip
+            }
         },
     },
     ["AI"] = {
-        Enabled = true,
+        Enabled = false,
         Hit_Predictor = {
             Enabled = true,
             Visualize = true,
@@ -35,7 +35,7 @@ getgenv().Nemesis = {
             Average_Range = 100,
             Max_Range = 200
         },
-        Auto_Aim = {
+        Auto_Aim = { -- todo
             Enabled = false,
             Configuration = {
                 Stickyness = Vector2.new(5, 4),
@@ -47,11 +47,12 @@ getgenv().Nemesis = {
     ["Silent"] = {
         Enabled = true,
         Toggle = "P",
-        Mode = "Aggressive", -- Aggressive, Passive
+        Mode = "Aggressive",
+        FocusedColor = Color3.fromRGB(197, 142, 142),
         Selection = {
             Mode = "FOV", -- FOV - Uses the person nearest to your mouse, Target - Targets your aimbot target, Standalone - Targets any person you click the target key on
             OnShot = true, -- Only selects a target for FOV mode when a tool is activated
-            FOVStick = true, -- Sticky circle FoV
+            FOVStick = false, -- Sticky circle FoV
             StandaloneBind = "V"
         },
         AntiCurve = {
@@ -82,9 +83,9 @@ getgenv().Nemesis = {
             UseExpand = false,
             UseAutomatic = false,
             -----------------------------
-            X = 0.11934,
-            Y = 0.11934,
-            Z = 0.11934,
+            X = 0.12962616,
+            Y = 0.12962616,
+            Z = 0.12962616,
             -----------------------------
             Expand_X = 0.012,
             Expand_Y = 0.012,
@@ -101,7 +102,7 @@ getgenv().Nemesis = {
         HitParts = {
             UseScaling = false,
             Transformation = "Position",
-            HitType = "", -- Nearest Point, Nearest Part
+            HitType = "Nearest Point", -- Nearest Point, Nearest Part
             HitFavor = 7, -- 1, 2, 3, 4, 5, 6, 7, 8
             --[[
                 HitFavors 1-6 can only be used with the "CFrame" transformation, for 7 and above use "Position"
@@ -125,17 +126,17 @@ getgenv().Nemesis = {
             }
         },
         FOV = {
-            FOVType = 2, -- 1, 2, 3
-            FOV2Rectangle = true, -- must be on even if type is set to 2 or 3 to use box / rectangle fov
+            FOVType = 1, -- 1, 2, 3
+            FOV2Rectangle = false, -- must be on even if type is set to 2 or 3 to use box / rectangle fov
             --[[
                 all fov2 options apply to 2 and above, fov2 - 3 must be enabled to use them
             ]]
-            ShowFOV2 = true,
+            ShowFOV2 = false,
             FOV2Thickness = 2,
             FOV2Width = 90,
             FOV2Height = 150,
             -----------------------------
-            ShowFOV = false,
+            ShowFOV = true,
             Radius = 100,
             Color = Color3.fromRGB(168, 198, 216),
             Filled = true,
@@ -591,7 +592,7 @@ getgenv().Nemesis = {
         },
         Smoothing = {
             Smoothing = 0.032,
-            UseXY = false,
+            UseXY = true,
             UseLerp = false,
             UseDynamic = false,
             -----------------------------
@@ -656,7 +657,7 @@ getgenv().Nemesis = {
             Coefficient = 1
         },
         Offsets = {
-            Enabled = true,
+            Enabled = false,
             Offset = 0.9,
             UseXYZ = true,
             -----------------------------
@@ -688,7 +689,7 @@ getgenv().Nemesis = {
             MinScale = 2,
         },
         Proximity_Checks = {
-            Inside_FOV = true,
+            Inside_FOV = false,
             Deadzone = false,
             Customization = {
                 FOV = 150,
@@ -1115,7 +1116,7 @@ getgenv().Nemesis = {
         },
     },
     ["TriggerBot"] = {
-        Enabled = true,
+        Enabled = false,
         Ai_Prediction = true, -- applies all ai prediction to triggerbot
         Prediction = 0.03,
         Sensitivity = 5,
@@ -1185,7 +1186,7 @@ getgenv().Nemesis = {
             }
         },
         Memory = {
-            Enabled = true,
+            Enabled = false,
             Minimum = 800,
             Maximum = 1200,
             Spike = 2,
@@ -1201,16 +1202,16 @@ getgenv().Nemesis = {
             Speed = 30 -- math.pi / 0.165 = 180 degrees p/s
         },
         Anti_Trip = {
-            Enabled = true
+            Enabled = false
         },
         LowGFX = {
             Enabled = false,
         },
         Mute_BoomBox = {
-            Enabled = true
+            Enabled = false
         },
         Anti_Sit = {
-            Enabled = true
+            Enabled = false
         },
         Ping_Spike = {
             Enabled = false,
@@ -1221,7 +1222,7 @@ getgenv().Nemesis = {
             Time = 2
         },
         Console_Clear = {
-            Enabled = true,
+            Enabled = false,
             Keybind = "U"
         },
         Rejoin = {
