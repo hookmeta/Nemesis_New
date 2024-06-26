@@ -9,7 +9,7 @@ getgenv().Nemesis = {
         },
         Resolver = {
             Force = false, -- keep resolver always on
-            Angles = "Abstract", -- Abstract, Humanized
+            Angles = "Abstract",
             Flags = { -- this will be ignored if Force is true
                 Abnormal = true,
                 Forcing = { true, 10 },
