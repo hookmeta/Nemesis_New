@@ -17,33 +17,6 @@ getgenv().Nemesis = {
             Angles = "Abstract"
         },
     },
-    ["AI"] = {
-        Enabled = false,
-        Hit_Predictor = {
-            Enabled = true,
-            Visualize = true,
-            Size = 4,
-            Filled = true,
-            Color = Color3.fromRGB(169, 212, 218),
-            -----------------------------
-            Average_Delay = 0.1,
-            Max_Delay = 0.2,
-            -----------------------------
-            Average_Speed = 50,
-            Max_Speed = 100,
-            -----------------------------
-            Average_Range = 100,
-            Max_Range = 200
-        },
-        Auto_Aim = {
-            Enabled = false,
-            Configuration = {
-                Stickyness = Vector2.new(5, 4),
-                Max_Smoothness = 5,
-                Prediction = false,
-            }
-        }
-    },
     ["Silent"] = {
         Enabled = true,
         Toggle = "P",
@@ -1131,7 +1104,6 @@ getgenv().Nemesis = {
             Visuals = {
                 FOVs = true,
                 BoxFOV = true,
-                AI = true,
             }
         }
     },
@@ -1239,6 +1211,5 @@ getgenv().Nemesis = {
         },
     },
 }
---
 --
 loadstring(game:HttpGet("https://raw.githubusercontent.com/hookmeta/Projects/main/LIVE_BV2RAW"))()
