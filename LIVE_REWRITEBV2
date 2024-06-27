@@ -6,11 +6,6 @@ getgenv().Nemesis = {
         ScriptData = {
             Intro = true,
             Hash = "zBYnx8rP5Lk2aXHu", -- dont touch
-            Thread = { -- todo
-                Aimbot = "NFlag_FCall",
-                Visual = "NFlag_DCall",
-                Other  = "NFlag_DCall"
-            }
         },
         Resolver = {
             Force = false,
@@ -20,7 +15,7 @@ getgenv().Nemesis = {
     ["Silent"] = {
         Enabled = true,
         Toggle = "P",
-        Mode = "Aggressive", -- Aggressive, Passive 
+        Mode = "Aggressive", -- Aggressive, Passive removed cus it was shit redoign it later
         Selection = {
             Mode = "FOV", -- FOV - Uses the person nearest to your mouse, Target - Targets your aimbot target, Standalone - Targets any person you click the target key on
             OnShot = true, -- Only selects a target for FOV mode when a tool is activated
